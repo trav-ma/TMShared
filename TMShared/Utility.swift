@@ -179,10 +179,14 @@ func formatDate(date: NSDate, format: String) -> String {
     return dateFormatter.stringFromDate(date)
 }
 
-func formatCurrency(number: NSNumber) -> String {
-    let formatter = NSNumberFormatter()
-    formatter.numberStyle = .CurrencyStyle
-    return formatter.stringFromNumber(number)!
+func formatCurrency(number: NSNumber?) -> String {
+    if number == nil {
+        return "$0.00"
+    } else {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        return formatter.stringFromNumber(number!)!
+    }
 }
 
 func isDateTimeInRange(timeStamp:NSDate, startTime:NSDate, endTime:NSDate)->Bool{
