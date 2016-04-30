@@ -11,7 +11,7 @@ import SystemConfiguration
 
 let metersInMile = 1609.34
 
-//styles
+//MARK:- Classes
 
 class StyledTextView: UITextView {
     
@@ -45,8 +45,6 @@ class StyledToggleButton: UIButton { //must be a "custom" button type
     
 }
 
-//Helpers
-
 class TableCellCollectionView: UICollectionView { //allows you to put a collectionview onto a table cell without disabling the cell selection
     
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
@@ -60,92 +58,7 @@ class TableCellCollectionView: UICollectionView { //allows you to put a collecti
     
 }
 
-func isConnectedToNetwork() -> Bool {
-    var zeroAddress = sockaddr_in()
-    zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
-    zeroAddress.sin_family = sa_family_t(AF_INET)
-    guard let defaultRouteReachability = withUnsafePointer(&zeroAddress, {
-        SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
-    }) else {
-        return false
-    }
-    var flags : SCNetworkReachabilityFlags = []
-    if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
-        return false
-    }
-    let isReachable = flags.contains(.Reachable)
-    let needsConnection = flags.contains(.ConnectionRequired)
-    return (isReachable && !needsConnection)
-}
-
-func appDelegate () -> AppDelegate {
-    return UIApplication.sharedApplication().delegate as! AppDelegate
-}
-
-func dateAdjustedByDays(days: Int) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
-}
-
-func toggleControlAccess(control: AnyObject, isEnabled: Bool) {
-    if control.isKindOfClass(UITextField) {
-        if let textField = control as? UITextField {
-            textField.enabled = isEnabled
-            textField.backgroundColor = !isEnabled ? colorGray(245) : UIColor.whiteColor()
-            textField.text = ""
-        }
-    } else if control.isKindOfClass(UITextView) {
-        if let textView = control as? UITextView {
-            textView.editable = isEnabled
-            textView.backgroundColor = !isEnabled ? colorGray(245) : UIColor.whiteColor()
-            textView.text = ""
-        }
-    }
-}
-
-func listFontFamilies() {
-	for family: String in UIFont.familyNames() {
-	     print("\(family)")
-	     for names: String in UIFont.fontNamesForFamilyName(family) {
-	         print("== \(names)")
-	     }
-	}
-}
-
-func scaleImage(image: UIImage, toSize newSize: CGSize) -> (UIImage) {
-    let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
-    let context = UIGraphicsGetCurrentContext()
-    CGContextSetInterpolationQuality(context, .High)
-    let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
-    CGContextConcatCTM(context, flipVertical)
-    CGContextDrawImage(context, newRect, image.CGImage)
-    let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context)!)
-    UIGraphicsEndImageContext()
-    return newImage
-}
-
-//converts transparencies to black
-func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-    let scale = newWidth / image.size.width
-    let newHeight = image.size.height * scale
-    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-    image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return newImage
-}
-
-func lastPartOfGuid(guid: String) -> String {
-    if let idx = guid.rangeOfString("-", options: .BackwardsSearch)?.startIndex {
-        return guid.substringFromIndex(idx.advancedBy(1))
-    } else {
-        return "-"
-    }
-}
-
-func lowercaseGuid() -> String {
-    return NSUUID().UUIDString.lowercaseString
-}
+//MARK:- Network
 
 func jsonDataToDictionary(data: NSData) -> AnyObject? {
     do {
@@ -169,14 +82,69 @@ func dictionaryToJsonData(dic: NSDictionary) -> NSData? {
     return nil
 }
 
-func colorGray(rgb: CGFloat) -> UIColor {
-    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
+func isConnectedToNetwork() -> Bool {
+    var zeroAddress = sockaddr_in()
+    zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+    zeroAddress.sin_family = sa_family_t(AF_INET)
+    guard let defaultRouteReachability = withUnsafePointer(&zeroAddress, {
+        SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
+    }) else {
+        return false
+    }
+    var flags : SCNetworkReachabilityFlags = []
+    if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+        return false
+    }
+    let isReachable = flags.contains(.Reachable)
+    let needsConnection = flags.contains(.ConnectionRequired)
+    return (isReachable && !needsConnection)
 }
 
-func formatDate(date: NSDate, format: String) -> String {
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = format
-    return dateFormatter.stringFromDate(date)
+//MARK:- Other Helpers
+
+func appDelegate () -> AppDelegate {
+    return UIApplication.sharedApplication().delegate as! AppDelegate
+}
+
+func toggleControlAccess(control: AnyObject, isEnabled: Bool) {
+    if control.isKindOfClass(UITextField) {
+        if let textField = control as? UITextField {
+            textField.enabled = isEnabled
+            textField.backgroundColor = !isEnabled ? colorGray(245) : UIColor.whiteColor()
+            textField.text = ""
+        }
+    } else if control.isKindOfClass(UITextView) {
+        if let textView = control as? UITextView {
+            textView.editable = isEnabled
+            textView.backgroundColor = !isEnabled ? colorGray(245) : UIColor.whiteColor()
+            textView.text = ""
+        }
+    }
+}
+
+func listFontFamilies() {
+    for family: String in UIFont.familyNames() {
+        print("\(family)")
+        for names: String in UIFont.fontNamesForFamilyName(family) {
+            print("== \(names)")
+        }
+    }
+}
+
+func lastPartOfGuid(guid: String) -> String {
+    if let idx = guid.rangeOfString("-", options: .BackwardsSearch)?.startIndex {
+        return guid.substringFromIndex(idx.advancedBy(1))
+    } else {
+        return "-"
+    }
+}
+
+func lowercaseGuid() -> String {
+    return NSUUID().UUIDString.lowercaseString
+}
+
+func colorGray(rgb: CGFloat) -> UIColor {
+    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
 }
 
 func formatCurrency(number: NSNumber?) -> String {
@@ -187,13 +155,6 @@ func formatCurrency(number: NSNumber?) -> String {
         formatter.numberStyle = .CurrencyStyle
         return formatter.stringFromNumber(number!)!
     }
-}
-
-func isDateTimeInRange(timeStamp:NSDate, startTime:NSDate, endTime:NSDate)->Bool{
-    if timeStamp.earlierDate(endTime) == timeStamp && timeStamp.laterDate(startTime) == timeStamp{
-        return true
-    }
-    return false
 }
 
 public func deleteContentsOfFolder(dataPath: String) {
@@ -210,11 +171,6 @@ public func deleteContentsOfFolder(dataPath: String) {
             }
         }
     }
-}
-
-func currentDateAtTime(hours: Int, minutes: Int) -> NSDate {
-    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    return cal.dateBySettingHour(hours, minute: minutes, second: 0, ofDate: NSDate(), options: NSCalendarOptions())!
 }
 
 func numbersOnly(string: String?) -> String {
@@ -250,6 +206,56 @@ func nullCheck(num: NSNumber?) -> NSNumber {
     } else {
         return num!
     }
+}
+
+//MARK:- Date
+
+func dateAdjustedByDays(days: Int) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
+}
+
+func formatDate(date: NSDate, format: String) -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.stringFromDate(date)
+}
+
+func isDateTimeInRange(timeStamp:NSDate, startTime:NSDate, endTime:NSDate) -> Bool {
+    if timeStamp.earlierDate(endTime) == timeStamp && timeStamp.laterDate(startTime) == timeStamp{
+        return true
+    }
+    return false
+}
+
+func currentDateAtTime(hours: Int, minutes: Int) -> NSDate {
+    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    return cal.dateBySettingHour(hours, minute: minutes, second: 0, ofDate: NSDate(), options: NSCalendarOptions())!
+}
+
+//MARK:- Images
+
+func scaleImage(image: UIImage, toSize newSize: CGSize) -> (UIImage) {
+    let newRect = CGRectIntegral(CGRectMake(0,0, newSize.width, newSize.height))
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+    let context = UIGraphicsGetCurrentContext()
+    CGContextSetInterpolationQuality(context, .High)
+    let flipVertical = CGAffineTransformMake(1, 0, 0, -1, 0, newSize.height)
+    CGContextConcatCTM(context, flipVertical)
+    CGContextDrawImage(context, newRect, image.CGImage)
+    let newImage = UIImage(CGImage: CGBitmapContextCreateImage(context)!)
+    UIGraphicsEndImageContext()
+    return newImage
+}
+
+//converts transparencies to black
+func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+    let scale = newWidth / image.size.width
+    let newHeight = image.size.height * scale
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+    image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return newImage
 }
 
 
