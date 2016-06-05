@@ -102,6 +102,82 @@ func isConnectedToNetwork() -> Bool {
 
 //MARK:- Other Helpers
 
+func cloudKitFetchAll(recordType: String, predicate: NSPredicate?, sorts: [NSSortDescriptor]?, result: (records: [CKRecord]?, error: NSError?) -> Void){
+    let pred = predicate == nil ? NSPredicate(format: "TRUEPREDICATE") : predicate!
+    let cloudKitQuery = CKQuery(recordType: recordType, predicate: pred)
+    cloudKitQuery.sortDescriptors = sorts
+    var records = [CKRecord]()
+    let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+    
+    func recurrentOperations(cursor: CKQueryCursor?){
+        let recurrentOperation = CKQueryOperation(cursor: cursor!)
+        recurrentOperation.recordFetchedBlock = { record in
+            records.append(record)
+        }
+        recurrentOperation.queryCompletionBlock = { cursor, error in
+            if error != nil {
+                print("cloudKitFetchAll - error - \(error)")
+                result(records: nil, error: error)
+            } else {
+                if cursor != nil {
+                    print("cloudKitFetchAll - records \(records.count) - cursor \(cursor!.description)")
+                    recurrentOperations(cursor!)
+                } else {
+                    result(records: records, error: nil)
+                }
+            }
+        }
+        publicDatabase.addOperation(recurrentOperation)
+    }
+    
+    // initial operation
+    let initialOperation = CKQueryOperation(query: cloudKitQuery)
+    initialOperation.recordFetchedBlock = { record in
+        records.append(record)
+    }
+    initialOperation.queryCompletionBlock = { cursor, error in
+        if error != nil {
+            print("cloudKitFetchAll - error - \(error)")
+            result(records: nil, error: error)
+        } else {
+            if cursor != nil {
+                print("cloudKitFetchAll - records \(records.count) - cursor \(cursor!.description)")
+                recurrentOperations(cursor!)
+            } else {
+                result(records: records, error: nil)
+            }
+        }
+    }
+    publicDatabase.addOperation(initialOperation)
+}
+
+func generatePasscode(length : Int) -> NSString {
+    let letters : NSString = "1234567890"
+    let randomString : NSMutableString = NSMutableString(capacity: length)
+    for _ in 0 ..< length {
+        let length = UInt32 (letters.length)
+        let rand = arc4random_uniform(length)
+        randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+    }
+    return randomString
+}
+
+func formatPhone(phone: String?) -> String {
+    if phone == nil || (phone!).characters.count == 0 {
+        return ""
+    }
+    let stringts = NSMutableString()
+    stringts.appendString(phone!)
+    stringts.insertString("(", atIndex: 0)
+    stringts.insertString(") ", atIndex: 4)
+    stringts.insertString("-", atIndex: 9)
+    return stringts as String
+}
+
+func colorGray(rgb: CGFloat) -> UIColor {
+    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
+}
+
 func appDelegate () -> AppDelegate {
     return UIApplication.sharedApplication().delegate as! AppDelegate
 }
@@ -131,20 +207,8 @@ func listFontFamilies() {
     }
 }
 
-func lastPartOfGuid(guid: String) -> String {
-    if let idx = guid.rangeOfString("-", options: .BackwardsSearch)?.startIndex {
-        return guid.substringFromIndex(idx.advancedBy(1))
-    } else {
-        return "-"
-    }
-}
-
 func lowercaseGuid() -> String {
     return NSUUID().UUIDString.lowercaseString
-}
-
-func colorGray(rgb: CGFloat) -> UIColor {
-    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
 }
 
 func formatCurrency(number: NSNumber?) -> String {
@@ -247,7 +311,7 @@ func scaleImage(image: UIImage, toSize newSize: CGSize) -> (UIImage) {
     return newImage
 }
 
-//converts transparencies to black
+//Warning: converts transparencies to black
 func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
     let scale = newWidth / image.size.width
     let newHeight = image.size.height * scale

@@ -9,8 +9,6 @@
 
 import UIKit
 
-let colorTint = UIColor(red: 236/255, green: 93/255, blue: 47/255, alpha: 1)
-
 func hasValue(string: String) -> Bool {
     return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).characters.count > 0
 }
@@ -33,7 +31,7 @@ func animateShakes(view: UIView, shakes: Int, direction: Int) {
     })
 }
 
-func isButtonValid(btn: UIButton, successCheck: Bool) -> Bool {
+func isButtonValid(btn: UIButton, successCheck: Bool, resetColor: UIColor) -> Bool {
     if !successCheck {
         if btn.buttonType == .System {
             btn.tintColor = UIColor.redColor()
@@ -43,7 +41,7 @@ func isButtonValid(btn: UIButton, successCheck: Bool) -> Bool {
         animateShakes(btn, shakes: 0, direction: 1)
         return false
     } else {
-        restoreControl(btn)
+        restoreControl(btn, resetColor: resetColor)
     }
     return true
 }
@@ -63,9 +61,9 @@ func restoreControl(label: UILabel) {
     label.textColor = UIColor.blackColor()
 }
 
-func restoreControl(btn: UIButton) {
+func restoreControl(btn: UIButton, resetColor: UIColor) {
     if btn.buttonType == .System {
-        btn.tintColor = colorTint
+        btn.tintColor = resetColor
     } else {
         btn.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
     }
