@@ -264,6 +264,38 @@ func nullCheckBool(bool: NSNumber?) -> Bool {
     }
 }
 
+func nullCheck(num: Int?) -> Int {
+    if num == nil {
+        return 0
+    } else {
+        return num!
+    }
+}
+
+func nullCheck(num: Float?) -> Float {
+    if num == nil {
+        return 0
+    } else {
+        return num!
+    }
+}
+
+func nullCheck(num: Double?) -> Double {
+    if num == nil {
+        return 0
+    } else {
+        return num!
+    }
+}
+
+func nullCheck(date: NSDate?) -> NSDate {
+    if date == nil {
+        return NSDate()
+    } else {
+        return date!
+    }
+}
+
 func nullCheck(num: NSNumber?) -> NSNumber {
     if num == nil {
         return NSNumber(integer: 0)
