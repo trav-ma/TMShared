@@ -26,19 +26,19 @@ func randomPhone() -> String {
     return "(\(randomNumber(3))) \(randomNumber(3))-\(randomNumber(4))"
 }
 
-func randomName() -> String {
+func randomName(lastInitialOnly: Bool = false) -> String {
     let firstNames = [
         "Stephan",
         "Gregory",
-        "Dorsey",
+        "Jack",
         "Mervin",
-        "Demetrius",
+        "Alex",
         "Antonio",
         "Jamey",
         "Brian",
         "Shirley",
         "Gail",
-        "Eugenio",
+        "Sarah",
         "Chauncey",
         "Christian",
         "Xavier",
@@ -50,9 +50,36 @@ func randomName() -> String {
         "Tracey"
     ]
     let rand1 = Int(arc4random_uniform(UInt32(firstNames.count)))
-    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let rand2 = Int(arc4random_uniform(UInt32(letters.characters.count)))
-    return "\(firstNames[rand1]) \(Array(letters.characters)[rand2])."
+    if lastInitialOnly {
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let rand2 = Int(arc4random_uniform(UInt32(letters.characters.count)))
+        return "\(firstNames[rand1]) \(Array(letters.characters)[rand2])."
+    } else {
+        let lastNames = [
+            "Lewis",
+            "Smith",
+            "Lam",
+            "Martin",
+            "Brown",
+            "Roy",
+            "Tremblay",
+            "Lee",
+            "Gagnon",
+            "Wilson",
+            "Eugenio",
+            "Jackson",
+            "Moore",
+            "Sanchez",
+            "Taylor",
+            "Miller",
+            "Thomas",
+            "Harris",
+            "Walker",
+            "Anderson",
+            ]
+        let rand2 = Int(arc4random_uniform(UInt32(lastNames.count)))
+        return "\(firstNames[rand1]) \(firstNames[rand2])"
+    }
 }
 
 func randomChoice(array: [AnyObject]) -> AnyObject {

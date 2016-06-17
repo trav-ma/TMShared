@@ -48,11 +48,14 @@ class StyledToggleButton: UIButton { //must be a "custom" button type
 class TableCellCollectionView: UICollectionView { //allows you to put a collectionview onto a table cell without disabling the cell selection
     
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let hitView = super.hitTest(point, withEvent: event)!
-        if hitView.isKindOfClass(TableCellCollectionView) {
-            return nil
+        if let hitView = super.hitTest(point, withEvent: event) {
+            if hitView.isKindOfClass(TableCellCollectionView) {
+                return nil
+            } else {
+                return hitView
+            }
         } else {
-            return hitView
+            return nil
         }
     }
     
