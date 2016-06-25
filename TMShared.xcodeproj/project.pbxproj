@@ -16,6 +16,7 @@
 		1C13D9DA1CCDD29A00164F16 /* RandomizeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13D9D61CCDD29A00164F16 /* RandomizeHelpers.swift */; };
 		1C13D9DB1CCDD29A00164F16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13D9D71CCDD29A00164F16 /* Utility.swift */; };
 		1C13D9DC1CCDD29A00164F16 /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13D9D81CCDD29A00164F16 /* ValidationHelpers.swift */; };
+		1C2B7C951D1F046700C7EF74 /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1C13D9D61CCDD29A00164F16 /* RandomizeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizeHelpers.swift; sourceTree = "<group>"; };
 		1C13D9D71CCDD29A00164F16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1C13D9D81CCDD29A00164F16 /* ValidationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
+		1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				1C13D9D61CCDD29A00164F16 /* RandomizeHelpers.swift */,
 				1C13D9D71CCDD29A00164F16 /* Utility.swift */,
 				1C13D9D81CCDD29A00164F16 /* ValidationHelpers.swift */,
+				1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */,
 			);
 			name = SharedCode;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				1C13D9DA1CCDD29A00164F16 /* RandomizeHelpers.swift in Sources */,
 				1C13D9C61CCDD27300164F16 /* ViewController.swift in Sources */,
 				1C13D9DC1CCDD29A00164F16 /* ValidationHelpers.swift in Sources */,
+				1C2B7C951D1F046700C7EF74 /* CloudKitHelpers.swift in Sources */,
 				1C13D9C41CCDD27300164F16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
