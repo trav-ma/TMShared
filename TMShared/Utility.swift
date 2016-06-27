@@ -282,6 +282,11 @@ func currentDateAtTime(hours: Int, minutes: Int) -> NSDate {
     return cal.dateBySettingHour(hours, minute: minutes, second: 0, ofDate: NSDate(), options: NSCalendarOptions())!
 }
 
+func daysSinceDate(date: NSDate) -> Int {
+    let components = NSCalendar.currentCalendar().components([.Day], fromDate: date, toDate: NSDate(), options: [])
+    return components.day
+}
+
 //MARK:- Images
 
 func scaleImage(image: UIImage, toSize newSize: CGSize) -> (UIImage) {
