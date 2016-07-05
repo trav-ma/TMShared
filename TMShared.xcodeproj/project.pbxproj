@@ -17,6 +17,12 @@
 		1C13D9DB1CCDD29A00164F16 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13D9D71CCDD29A00164F16 /* Utility.swift */; };
 		1C13D9DC1CCDD29A00164F16 /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13D9D81CCDD29A00164F16 /* ValidationHelpers.swift */; };
 		1C2B7C951D1F046700C7EF74 /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */; };
+		1CDB0FAD1D2B388C00A500AF /* PopoverDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB0FA91D2B388C00A500AF /* PopoverDatePickerViewController.swift */; };
+		1CDB0FAE1D2B388C00A500AF /* PopoverDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB0FAA1D2B388C00A500AF /* PopoverDatePickerViewController.xib */; };
+		1CDB0FAF1D2B388C00A500AF /* PopoverSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB0FAB1D2B388C00A500AF /* PopoverSelectorViewController.swift */; };
+		1CDB0FB01D2B388C00A500AF /* PopoverSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB0FAC1D2B388C00A500AF /* PopoverSelectorViewController.xib */; };
+		1CDB0FB61D2B42D200A500AF /* PopoverTextEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB0FB51D2B42D200A500AF /* PopoverTextEntryViewController.swift */; };
+		1CDB0FB81D2B42EC00A500AF /* PopoverTextEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB0FB71D2B42EC00A500AF /* PopoverTextEntryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		1C13D9D71CCDD29A00164F16 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		1C13D9D81CCDD29A00164F16 /* ValidationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
 		1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelpers.swift; sourceTree = "<group>"; };
+		1CDB0FA91D2B388C00A500AF /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
+		1CDB0FAA1D2B388C00A500AF /* PopoverDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverDatePickerViewController.xib; sourceTree = "<group>"; };
+		1CDB0FAB1D2B388C00A500AF /* PopoverSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSelectorViewController.swift; sourceTree = "<group>"; };
+		1CDB0FAC1D2B388C00A500AF /* PopoverSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverSelectorViewController.xib; sourceTree = "<group>"; };
+		1CDB0FB51D2B42D200A500AF /* PopoverTextEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTextEntryViewController.swift; sourceTree = "<group>"; };
+		1CDB0FB71D2B42EC00A500AF /* PopoverTextEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverTextEntryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 		1C13D9C21CCDD27300164F16 /* TMShared */ = {
 			isa = PBXGroup;
 			children = (
+				1CDB0FA81D2B383900A500AF /* SharedViews */,
 				1C13D9E31CCDD37A00164F16 /* SharedCode */,
 				1C13D9C31CCDD27300164F16 /* AppDelegate.swift */,
 				1C13D9C51CCDD27300164F16 /* ViewController.swift */,
@@ -85,6 +98,19 @@
 				1C2B7C941D1F046700C7EF74 /* CloudKitHelpers.swift */,
 			);
 			name = SharedCode;
+			sourceTree = "<group>";
+		};
+		1CDB0FA81D2B383900A500AF /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB0FA91D2B388C00A500AF /* PopoverDatePickerViewController.swift */,
+				1CDB0FAA1D2B388C00A500AF /* PopoverDatePickerViewController.xib */,
+				1CDB0FAB1D2B388C00A500AF /* PopoverSelectorViewController.swift */,
+				1CDB0FAC1D2B388C00A500AF /* PopoverSelectorViewController.xib */,
+				1CDB0FB51D2B42D200A500AF /* PopoverTextEntryViewController.swift */,
+				1CDB0FB71D2B42EC00A500AF /* PopoverTextEntryViewController.xib */,
+			);
+			name = SharedViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +171,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDB0FB81D2B42EC00A500AF /* PopoverTextEntryViewController.xib in Resources */,
 				1C13D9CE1CCDD27300164F16 /* LaunchScreen.storyboard in Resources */,
 				1C13D9CB1CCDD27300164F16 /* Assets.xcassets in Resources */,
+				1CDB0FAE1D2B388C00A500AF /* PopoverDatePickerViewController.xib in Resources */,
+				1CDB0FB01D2B388C00A500AF /* PopoverSelectorViewController.xib in Resources */,
 				1C13D9C91CCDD27300164F16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,13 +187,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CDB0FB61D2B42D200A500AF /* PopoverTextEntryViewController.swift in Sources */,
 				1C13D9DB1CCDD29A00164F16 /* Utility.swift in Sources */,
 				1C13D9D91CCDD29A00164F16 /* CoreDataManager.swift in Sources */,
 				1C13D9DA1CCDD29A00164F16 /* RandomizeHelpers.swift in Sources */,
 				1C13D9C61CCDD27300164F16 /* ViewController.swift in Sources */,
 				1C13D9DC1CCDD29A00164F16 /* ValidationHelpers.swift in Sources */,
 				1C2B7C951D1F046700C7EF74 /* CloudKitHelpers.swift in Sources */,
+				1CDB0FAD1D2B388C00A500AF /* PopoverDatePickerViewController.swift in Sources */,
 				1C13D9C41CCDD27300164F16 /* AppDelegate.swift in Sources */,
+				1CDB0FAF1D2B388C00A500AF /* PopoverSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
