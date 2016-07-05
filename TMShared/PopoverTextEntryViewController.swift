@@ -22,7 +22,7 @@ class PopoverTextEntryViewController: UIViewController {
         textViewComment.text = text
         labelTitle.text = titleText
         btnClose.hidden = !shouldShowCloseButton
-        self.preferredContentSize = CGSizeMake(320, 400)
+        self.preferredContentSize = self.view.frame.size
     }
     
     override func viewDidAppear(animated: Bool) {
