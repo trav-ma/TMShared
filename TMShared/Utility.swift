@@ -260,8 +260,8 @@ func nullCheck(num: NSNumber?) -> NSNumber {
 
 //MARK:- Date
 
-func dateAdjustedByDays(days: Int) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))!
+func dateAdjustedByDays(date: NSDate, days: Int) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: date, options: NSCalendarOptions(rawValue: 0))!
 }
 
 func formatDate(date: NSDate, format: String) -> String {
@@ -277,9 +277,9 @@ func isDateTimeInRange(timeStamp:NSDate, startTime:NSDate, endTime:NSDate) -> Bo
     return false
 }
 
-func currentDateAtTime(hours: Int, minutes: Int) -> NSDate {
-    let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    return cal.dateBySettingHour(hours, minute: minutes, second: 0, ofDate: NSDate(), options: NSCalendarOptions())!
+func dateAtTime(date: NSDate, hours: Int, minutes: Int) -> NSDate {
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    return calendar.dateBySettingHour(hours, minute: minutes, second: 0, ofDate: date, options: NSCalendarOptions())!
 }
 
 func daysSinceDate(date: NSDate) -> Int {

@@ -9,33 +9,40 @@
 import UIKit
 
 class PopoverDatePickerViewController: UIViewController {
-    @IBOutlet weak var btnApply: UIButton!
+    @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
-    var didSelectDate : ((NSDate) -> Void)!
+    var didSelectDate : ((NSDate?) -> Void)!
     var date = NSDate()
     var mode: UIDatePickerMode = .DateAndTime
-    var shouldShowApplyButton = false
+    var shouldShowClearButton = false
+    var didTapClear = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = self.view.frame.size
-        self.datePicker.datePickerMode = mode
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         datePicker.date = date
+        self.datePicker.datePickerMode = mode
+        if shouldShowClearButton {
+            btnClear.hidden = false
+            btnClear.layer.borderColor = self.view.tintColor.CGColor
+            btnClear.layer.borderWidth = 1
+            btnClear.layer.cornerRadius = 8
+        } else {
+            btnClear.hidden = true
+        }
     }
 
     override func viewWillDisappear(animated: Bool) {
-        if !shouldShowApplyButton {
-            didSelectDate(datePicker.date)
-        }
+        didSelectDate(didTapClear ? nil : datePicker.date)
         super.viewWillDisappear(animated)
     }
     
-    @IBAction func btnApplyTap(sender: AnyObject) {
-        didSelectDate(datePicker.date)
+    @IBAction func btnClearTap(sender: AnyObject) {
+        didTapClear = true
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

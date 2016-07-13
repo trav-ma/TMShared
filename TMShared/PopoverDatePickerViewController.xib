@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopoverDatePickerViewController" customModule="Longstocking" customModuleProvider="target">
             <connections>
-                <outlet property="btnApply" destination="adh-fc-mjO" id="BIt-Pw-swk"/>
+                <outlet property="btnClear" destination="adh-fc-mjO" id="iae-vf-YwC"/>
                 <outlet property="datePicker" destination="NV8-uF-sgT" id="0LA-gi-YAV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,23 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CT6-cS-vQb">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CT6-cS-vQb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
                     <subviews>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NV8-uF-sgT">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
                             <date key="date" timeIntervalSinceReferenceDate="445215406.80615002">
                                 <!--2015-02-09 22:56:46 +0000-->
                             </date>
                         </datePicker>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adh-fc-mjO">
-                            <rect key="frame" x="0.0" y="176" width="320" height="40"/>
+                            <rect key="frame" x="20" y="170" width="280" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="djh-e0-E8q"/>
+                                <constraint firstAttribute="height" constant="36" id="djh-e0-E8q"/>
+                                <constraint firstAttribute="width" constant="280" id="scD-Uk-hfV"/>
                             </constraints>
-                            <state key="normal" title="Apply"/>
+                            <state key="normal" title="Clear"/>
                             <connections>
-                                <action selector="btnApplyTap:" destination="-1" eventType="touchUpInside" id="fZe-Uq-xpI"/>
+                                <action selector="btnClearTap:" destination="-1" eventType="touchUpInside" id="684-hy-tGf"/>
                             </connections>
                         </button>
                     </subviews>
@@ -42,7 +43,7 @@
             <constraints>
                 <constraint firstItem="CT6-cS-vQb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dh7-lv-SuB"/>
                 <constraint firstItem="CT6-cS-vQb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OGT-Vm-AOz"/>
-                <constraint firstAttribute="bottom" secondItem="CT6-cS-vQb" secondAttribute="bottom" id="hg8-Rc-nq9"/>
+                <constraint firstAttribute="bottom" secondItem="CT6-cS-vQb" secondAttribute="bottom" constant="10" id="hg8-Rc-nq9"/>
                 <constraint firstAttribute="trailing" secondItem="CT6-cS-vQb" secondAttribute="trailing" id="tw6-to-EBt"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
