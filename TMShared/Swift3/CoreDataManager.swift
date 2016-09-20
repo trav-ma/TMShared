@@ -25,13 +25,26 @@ class CoreDataManager {
         ]
         do {
             try storeCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: options)
-        } catch let error {
+        } catch {
             print("CoreDataManager.init: \(error)")
         }
         diskSaveObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         diskSaveObjectContext.persistentStoreCoordinator = storeCoordinator
         context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.parent = diskSaveObjectContext
+    }
+    
+    func save() {
+        if context.hasChanges {
+            do {
+                try context.save()
+                if diskSaveObjectContext.hasChanges {
+                    try diskSaveObjectContext.save()
+                }
+            } catch {
+                print("CoreDataManager.save: \(error)")
+            }
+        }
     }
     
 }
