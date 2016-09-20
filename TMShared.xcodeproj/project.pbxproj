@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C804E301D7F78C00035E280 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C804E2F1D7F78C00035E280 /* Utility.swift */; };
 		1CB0082C1D7BDC850078DF8B /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB008211D7BDC850078DF8B /* CloudKitHelpers.swift */; };
 		1CB0082D1D7BDC850078DF8B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB008221D7BDC850078DF8B /* CoreDataManager.swift */; };
 		1CB0082E1D7BDC850078DF8B /* PopoverDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB008231D7BDC850078DF8B /* PopoverDatePickerViewController.swift */; };
@@ -18,10 +19,13 @@
 		1CB008341D7BDC850078DF8B /* RandomizeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB008291D7BDC850078DF8B /* RandomizeHelpers.swift */; };
 		1CB008351D7BDC850078DF8B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB0082A1D7BDC850078DF8B /* Utility.swift */; };
 		1CB008361D7BDC850078DF8B /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB0082B1D7BDC850078DF8B /* ValidationHelpers.swift */; };
+		1CD823AA1D90D68A002D6FCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD823A91D90D68A002D6FCE /* CoreDataManager.swift */; };
+		1CD823AE1D90D71D002D6FCE /* ImagePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD823AD1D90D71D002D6FCE /* ImagePanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C13D9C01CCDD27300164F16 /* TMShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C804E2F1D7F78C00035E280 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Swift3/Utility.swift; sourceTree = "<group>"; };
 		1CB008211D7BDC850078DF8B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitHelpers.swift; path = Swift2/CloudKitHelpers.swift; sourceTree = "<group>"; };
 		1CB008221D7BDC850078DF8B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Swift2/CoreDataManager.swift; sourceTree = "<group>"; };
 		1CB008231D7BDC850078DF8B /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverDatePickerViewController.swift; path = Swift2/PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 		1CB008291D7BDC850078DF8B /* RandomizeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomizeHelpers.swift; path = Swift2/RandomizeHelpers.swift; sourceTree = "<group>"; };
 		1CB0082A1D7BDC850078DF8B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Swift2/Utility.swift; sourceTree = "<group>"; };
 		1CB0082B1D7BDC850078DF8B /* ValidationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationHelpers.swift; path = Swift2/ValidationHelpers.swift; sourceTree = "<group>"; };
+		1CD823A91D90D68A002D6FCE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Swift3/CoreDataManager.swift; sourceTree = "<group>"; };
+		1CD823AD1D90D71D002D6FCE /* ImagePanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePanViewController.swift; path = Swift3/ImagePanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,9 @@
 		1CB008201D7BDC590078DF8B /* Swift3 */ = {
 			isa = PBXGroup;
 			children = (
+				1CD823AD1D90D71D002D6FCE /* ImagePanViewController.swift */,
+				1CD823A91D90D68A002D6FCE /* CoreDataManager.swift */,
+				1C804E2F1D7F78C00035E280 /* Utility.swift */,
 			);
 			name = Swift3;
 			sourceTree = "<group>";
@@ -169,11 +178,14 @@
 			files = (
 				1CB008361D7BDC850078DF8B /* ValidationHelpers.swift in Sources */,
 				1CB008351D7BDC850078DF8B /* Utility.swift in Sources */,
+				1C804E301D7F78C00035E280 /* Utility.swift in Sources */,
 				1CB008321D7BDC850078DF8B /* PopoverTextEntryViewController.swift in Sources */,
 				1CB008341D7BDC850078DF8B /* RandomizeHelpers.swift in Sources */,
 				1CB0082D1D7BDC850078DF8B /* CoreDataManager.swift in Sources */,
 				1CB008301D7BDC850078DF8B /* PopoverSelectorViewController.swift in Sources */,
 				1CB0082E1D7BDC850078DF8B /* PopoverDatePickerViewController.swift in Sources */,
+				1CD823AA1D90D68A002D6FCE /* CoreDataManager.swift in Sources */,
+				1CD823AE1D90D71D002D6FCE /* ImagePanViewController.swift in Sources */,
 				1CB0082C1D7BDC850078DF8B /* CloudKitHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

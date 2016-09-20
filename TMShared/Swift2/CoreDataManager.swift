@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class CoreDataManager: NSObject {
-    
     var managedObjectContext: NSManagedObjectContext?
     private var diskSaveObjectContext: NSManagedObjectContext?
     var childObjectContext: NSManagedObjectContext?
