@@ -11,7 +11,7 @@ import CoreData
 
 class CoreDataManager {
     var context: NSManagedObjectContext!
-    private var diskSaveObjectContext: NSManagedObjectContext!
+    var diskSaveObjectContext: NSManagedObjectContext!
     
     init(databaseName: String) {
         let databaseLocation = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
