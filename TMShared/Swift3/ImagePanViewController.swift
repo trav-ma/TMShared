@@ -94,7 +94,7 @@ class ImagePanViewController: UIViewController {
         motionManager.stopDeviceMotionUpdates()
     }
     
-    func configureWithImage(image: UIImage) {
+    func configure(withImage image: UIImage) {
         panningImageView.image = image
         updateScrollViewZoomToMaximumForImage(image: image)
     }

@@ -18,6 +18,12 @@ func formatCurrency(number: NSNumber?) -> String {
     }
 }
 
+func addCommas(toInt16 int: Int16) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    return formatter.string(from: NSNumber(value: int))!
+}
+
 func addCommas(toNumber number: NSNumber?) -> String {
     if number == nil {
         return "0"
@@ -25,5 +31,23 @@ func addCommas(toNumber number: NSNumber?) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter.string(from: number!)!
+    }
+}
+
+func colorGray(_ rgb: CGFloat) -> UIColor {
+    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
+}
+
+func formatDate(_ date: Date, format: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.string(from: date)
+}
+
+func nullCheckString(_ string: String?) -> String {
+    if string == nil {
+        return ""
+    } else {
+        return string!
     }
 }
