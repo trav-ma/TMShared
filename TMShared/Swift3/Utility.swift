@@ -61,3 +61,21 @@ func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
     UIGraphicsEndImageContext()
     return newImage!
 }
+
+//usage animateShakes(view: myTextField, shakes: 0, direction: 1)
+func animateShakes(view: UIView, shakes: Int, direction: Int) {
+    var s = shakes
+    var d = direction
+    UIView.animate(withDuration: 0.05, animations: {
+        view.transform = CGAffineTransform(translationX: CGFloat(5 * direction), y: 0)
+        }, completion: {
+            finished in
+            if shakes >= 8 {
+                view.transform = .identity
+                return
+            }
+            s += 1
+            d = d * -1
+            animateShakes(view: view, shakes: s, direction: d)
+    })
+}
