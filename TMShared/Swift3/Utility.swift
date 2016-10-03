@@ -8,6 +8,8 @@
 
 import UIKit
 
+let imagesPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/images/"
+
 func formatCurrency(number: NSNumber?) -> String {
     if number == nil {
         return "$0.00"
@@ -18,7 +20,7 @@ func formatCurrency(number: NSNumber?) -> String {
     }
 }
 
-func addCommas(toInt16 int: Int16) -> String {
+func addCommas(toInt int: Int) -> String {
     let formatter = NumberFormatter()
     formatter.numberStyle = .decimal
     return formatter.string(from: NSNumber(value: int))!
