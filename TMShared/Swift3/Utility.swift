@@ -46,6 +46,19 @@ func formatDate(_ date: Date, format: String) -> String {
     return dateFormatter.string(from: date)
 }
 
+func numberToBool(_ number: NSNumber?) -> Bool {
+    if number == nil {
+        return false
+    } else {
+        return number!.boolValue
+    }
+}
+
+func dateWithZeroSeconds(_ date: Date) -> Date {
+    let time = floor(date.timeIntervalSinceReferenceDate / 60) * 60
+    return Date(timeIntervalSinceReferenceDate: time)
+}
+
 func nullCheckString(_ string: String?) -> String {
     if string == nil {
         return ""
