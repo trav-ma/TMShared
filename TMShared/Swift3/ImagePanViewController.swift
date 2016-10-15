@@ -151,6 +151,7 @@ class ImagePanViewController: UIViewController {
             updateScrollViewZoomToMaximumForImage(image: panningImageView.image!)
             panningScrollView.isScrollEnabled = false
         } else {
+            panningScrollView.maximumZoomScale = 3
             panningScrollView.zoomScale = 1
             panningScrollView.isScrollEnabled = true
         }
