@@ -30,7 +30,7 @@ class StyledToggleButton: UIButton { //must be a "custom" button type
     var buttonId: String?
     
     override func awakeFromNib() {
-        self.setImage(UIImage(named: "unchecked"), forState: .Normal)
+        self.setImage(imageUnchecked, forState: .Normal)
         self.setImage(UIImage(named: "checked"), forState: .Selected)
         self.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         self.setTitleColor(UIColor.grayColor(), forState: .Selected)

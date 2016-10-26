@@ -40,6 +40,28 @@ func colorGray(_ rgb: CGFloat) -> UIColor {
     return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
 }
 
+func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
+    let calendar = Calendar(identifier: .gregorian)
+    var hrs = hours
+    var mins = minutes
+    var d = date
+    if minutes > 60 {
+        hrs += Int(floor(Double(minutes) / 60))
+        mins = Int(Double(minutes).truncatingRemainder(dividingBy: 60))
+    }
+    if hrs > 24 {
+        let days = Int(floor(Double(hrs) / 24))
+        hrs = Int(Double(hrs).truncatingRemainder(dividingBy: 24))
+        d = calendar.date(byAdding: .day, value: days, to: date)!
+    }
+    return calendar.date(bySettingHour: hrs, minute: mins, second: 0, of: d)!
+}
+
+func dayOfWeek(_ date: Date) -> Int {
+    let cal = Calendar(identifier: .gregorian)
+    return cal.component(.weekday, from: date)
+}
+
 func formatDate(_ date: Date, format: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
