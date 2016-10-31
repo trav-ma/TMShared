@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C230FBF1DC6DAF200CC2167 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C230FBE1DC6DAF200CC2167 /* RangeSlider.swift */; };
 		1C51234B1D9776950097F5F1 /* PopoverDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51234A1D9776950097F5F1 /* PopoverDatePickerViewController.swift */; };
 		1C804E301D7F78C00035E280 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C804E2F1D7F78C00035E280 /* Utility.swift */; };
 		1CB0082C1D7BDC850078DF8B /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB008211D7BDC850078DF8B /* CloudKitHelpers.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		1C13D9C01CCDD27300164F16 /* TMShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C230FBE1DC6DAF200CC2167 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		1C51234A1D9776950097F5F1 /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
 		1C804E2F1D7F78C00035E280 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Swift3/Utility.swift; sourceTree = "<group>"; };
 		1CB008211D7BDC850078DF8B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitHelpers.swift; path = Swift2/CloudKitHelpers.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		1CB008201D7BDC590078DF8B /* Swift3 */ = {
 			isa = PBXGroup;
 			children = (
+				1C230FBE1DC6DAF200CC2167 /* RangeSlider.swift */,
 				1CB36D721DA16CFF0095E4DF /* CircleGraphView.swift */,
 				1C51234A1D9776950097F5F1 /* PopoverDatePickerViewController.swift */,
 				1CD823AD1D90D71D002D6FCE /* ImagePanViewController.swift */,
@@ -194,6 +197,7 @@
 				1CD823AA1D90D68A002D6FCE /* CoreDataManager.swift in Sources */,
 				1CD823AE1D90D71D002D6FCE /* ImagePanViewController.swift in Sources */,
 				1C51234B1D9776950097F5F1 /* PopoverDatePickerViewController.swift in Sources */,
+				1C230FBF1DC6DAF200CC2167 /* RangeSlider.swift in Sources */,
 				1CB0082C1D7BDC850078DF8B /* CloudKitHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
