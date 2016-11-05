@@ -40,6 +40,21 @@ func colorGray(_ rgb: CGFloat) -> UIColor {
     return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
 }
 
+func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
+    switch (UIScreen.main.nativeBounds.size.height) {
+    case 960, 480:
+        return 3.5
+    case 1136:
+        return 4
+    case 1334:
+        return 4.7
+    case 2208:
+        return 5.5
+    default:
+        return defaultValue
+    }
+}
+
 func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
     let calendar = Calendar(identifier: .gregorian)
     var hrs = hours
@@ -53,6 +68,10 @@ func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
         let days = Int(floor(Double(hrs) / 24))
         hrs = Int(Double(hrs).truncatingRemainder(dividingBy: 24))
         d = calendar.date(byAdding: .day, value: days, to: date)!
+    }
+    if hrs == 24 {
+        hrs = 23
+        mins = 59
     }
     return calendar.date(bySettingHour: hrs, minute: mins, second: 0, of: d)!
 }
