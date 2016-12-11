@@ -28,8 +28,8 @@
 
 /* Begin PBXFileReference section */
 		1C13D9C01CCDD27300164F16 /* TMShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C230FBE1DC6DAF200CC2167 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
-		1C51234A1D9776950097F5F1 /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
+		1C230FBE1DC6DAF200CC2167 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RangeSlider.swift; path = Swift3/RangeSlider.swift; sourceTree = "<group>"; };
+		1C51234A1D9776950097F5F1 /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverDatePickerViewController.swift; path = Swift3/PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
 		1C804E2F1D7F78C00035E280 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Swift3/Utility.swift; sourceTree = "<group>"; };
 		1CB008211D7BDC850078DF8B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitHelpers.swift; path = Swift2/CloudKitHelpers.swift; sourceTree = "<group>"; };
 		1CB008221D7BDC850078DF8B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Swift2/CoreDataManager.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		1CB008291D7BDC850078DF8B /* RandomizeHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomizeHelpers.swift; path = Swift2/RandomizeHelpers.swift; sourceTree = "<group>"; };
 		1CB0082A1D7BDC850078DF8B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Swift2/Utility.swift; sourceTree = "<group>"; };
 		1CB0082B1D7BDC850078DF8B /* ValidationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationHelpers.swift; path = Swift2/ValidationHelpers.swift; sourceTree = "<group>"; };
-		1CB36D721DA16CFF0095E4DF /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
+		1CB36D721DA16CFF0095E4DF /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleGraphView.swift; path = Swift3/CircleGraphView.swift; sourceTree = "<group>"; };
 		1CD823A91D90D68A002D6FCE /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Swift3/CoreDataManager.swift; sourceTree = "<group>"; };
 		1CD823AD1D90D71D002D6FCE /* ImagePanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePanViewController.swift; path = Swift3/ImagePanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
