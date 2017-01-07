@@ -10,13 +10,23 @@ import UIKit
 
 let imagesPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/images/"
 
-func formatCurrency(number: NSNumber?) -> String {
+func formatCurrency(_ number: NSNumber?) -> String {
     if number == nil {
         return "$0.00"
     } else {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         return formatter.string(from: number!)!
+    }
+}
+
+func formatCurrency(_ number: Float?) -> String {
+    if number == nil {
+        return "$0.00"
+    } else {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter.string(from: NSNumber(value: number!))!
     }
 }
 
@@ -40,6 +50,16 @@ func colorGray(_ rgb: CGFloat) -> UIColor {
     return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
 }
 
+func jsonDataToObject(_ data: Data?) -> Any? {
+    guard let data = data else { return nil }
+    do {
+        return try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    } catch {
+        print("jsonDataToObject: \(error)")
+    }
+    return nil
+}
+
 func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
     switch (UIScreen.main.nativeBounds.size.height) {
     case 960, 480:
@@ -53,6 +73,10 @@ func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
     default:
         return defaultValue
     }
+}
+
+func dateAdjustedByDays(date: Date, days: Int) -> Date {
+    return Calendar.current.date(byAdding: .day, value: days, to: date)!
 }
 
 func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
@@ -74,6 +98,11 @@ func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
         mins = 59
     }
     return calendar.date(bySettingHour: hrs, minute: mins, second: 0, of: d)!
+}
+
+func daysSinceDate(_ date: Date) -> Int {
+    let components = Calendar.current.dateComponents([.day], from: date, to: Date())
+    return components.day!
 }
 
 func dayOfWeek(_ date: Date) -> Int {
@@ -106,6 +135,10 @@ func nullCheckString(_ string: String?) -> String {
     } else {
         return string!
     }
+}
+
+func appDelegate() -> AppDelegate {
+    return UIApplication.shared.delegate as! AppDelegate
 }
 
 func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
