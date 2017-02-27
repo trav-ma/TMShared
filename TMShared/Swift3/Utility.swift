@@ -116,6 +116,12 @@ func formatDate(_ date: Date, format: String) -> String {
     return dateFormatter.string(from: date)
 }
 
+func stringToDate(_ string: String, format: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.date(from: string)
+}
+
 func numberToBool(_ number: NSNumber?) -> Bool {
     if number == nil {
         return false
