@@ -135,6 +135,14 @@ func dateWithZeroSeconds(_ date: Date) -> Date {
     return Date(timeIntervalSinceReferenceDate: time)
 }
 
+func nullCheckInt(_ int: Int?) -> Int {
+    if int == nil {
+        return 0
+    } else {
+        return int!
+    }
+}
+
 func nullCheckString(_ string: String?) -> String {
     if string == nil {
         return ""

@@ -56,3 +56,19 @@ func cloudKitFetchAll(_ recordType: String, predicate: NSPredicate?, sorts: [NSS
     }
     publicDatabase.add(initialOperation)
 }
+
+func nullCheckInt(_ int: CKRecordValue?) -> Int {
+    if int == nil {
+        return 0
+    } else {
+        return int as! Int
+    }
+}
+
+func nullCheckString(_ string: CKRecordValue?) -> String {
+    if string == nil {
+        return ""
+    } else {
+        return string as! String
+    }
+}
