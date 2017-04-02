@@ -23,7 +23,7 @@ func cloudKitFetchAll(_ recordType: String, predicate: NSPredicate?, sorts: [NSS
         }
         recurrentOperation.queryCompletionBlock = { cursor, error in
             if error != nil {
-                print("cloudKitFetchAll - error - \(error)")
+                print("cloudKitFetchAll - error - \(error!)")
                 result(nil, error as NSError?)
             } else {
                 if cursor != nil {
@@ -43,7 +43,7 @@ func cloudKitFetchAll(_ recordType: String, predicate: NSPredicate?, sorts: [NSS
     }
     initialOperation.queryCompletionBlock = { cursor, error in
         if error != nil {
-            print("cloudKitFetchAll - error - \(error)")
+            print("cloudKitFetchAll - error - \(error!)")
             result(nil, error as NSError?)
         } else {
             if cursor != nil {

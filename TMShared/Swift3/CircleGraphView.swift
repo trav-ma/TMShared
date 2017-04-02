@@ -14,7 +14,7 @@ class CircleGraphView: UIView {
     var percent2: CGFloat = 0
 
     func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
-        return degrees * CGFloat(M_PI) / 180.0
+        return degrees * CGFloat(Double.pi) / 180.0
     }
 
     func drawCircleGraph(percents: [CGFloat], colors: [UIColor], thickness: CGFloat = 3) {
