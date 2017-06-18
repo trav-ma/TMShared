@@ -57,18 +57,44 @@ func cloudKitFetchAll(_ recordType: String, predicate: NSPredicate?, sorts: [NSS
     publicDatabase.add(initialOperation)
 }
 
+func referencesToRecordNames(references: CKRecordValue?) -> [String] {
+    var recordNames = [String]()
+    if let refs = references as? [CKReference] {
+        for r in refs {
+            recordNames.append(r.recordID.recordName)
+        }
+    }
+    return recordNames
+}
+
+func recordToData(record: CKRecord) -> NSData {
+    let archivedData = NSMutableData()
+    let archiver = NSKeyedArchiver(forWritingWith: archivedData)
+    archiver.requiresSecureCoding = true
+    record.encodeSystemFields(with: archiver)
+    archiver.finishEncoding()
+    return archivedData
+}
+
+func dataToRecord(data: NSData) -> CKRecord? {
+    let unarchiver = NSKeyedUnarchiver(forReadingWith: data as Data)
+    unarchiver.requiresSecureCoding = true
+    return CKRecord(coder: unarchiver)
+}
+
+
 func nullCheckInt(_ int: CKRecordValue?) -> Int {
-    if int == nil {
-        return 0
+    if let int = int as? Int {
+        return int
     } else {
-        return int as! Int
+        return 0
     }
 }
 
 func nullCheckString(_ string: CKRecordValue?) -> String {
-    if string == nil {
-        return ""
+    if let s = string as? String {
+        return s.trimmingCharacters(in: .whitespacesAndNewlines)
     } else {
-        return string as! String
+        return ""
     }
 }
