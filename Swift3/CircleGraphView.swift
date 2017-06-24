@@ -13,6 +13,11 @@ class CircleGraphView: UIView {
     var percent1: CGFloat = 0
     var percent2: CGFloat = 0
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = UIColor.clear
+    }
+
     func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
         return degrees * CGFloat(Double.pi) / 180.0
     }
