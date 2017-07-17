@@ -79,6 +79,17 @@ func dateAdjustedByDays(date: Date, days: Int) -> Date {
     return Calendar.current.date(byAdding: .day, value: days, to: date)!
 }
 
+func generatePasscode(_ length : Int) -> String {
+    let letters : NSString = "1234567890"
+    let randomString : NSMutableString = NSMutableString(capacity: length)
+    for _ in 0 ..< length {
+        let length = UInt32 (letters.length)
+        let rand = arc4random_uniform(length)
+        randomString.appendFormat("%C", letters.character(at: Int(rand)))
+    }
+    return randomString as String
+}
+
 func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
     let calendar = Calendar(identifier: .gregorian)
     var hrs = hours
