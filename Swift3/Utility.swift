@@ -20,6 +20,20 @@ func formatCurrency(_ number: NSNumber?) -> String {
     }
 }
 
+func formatPhone(_ phone: String?) -> String {
+    guard let phone = phone else {
+        return ""
+    }
+    if phone.isEmpty || phone.characters.count < 10 {
+        return phone
+    }
+    let formattedPhone = NSMutableString(string: phone)
+    formattedPhone.insert("(", at: 0)
+    formattedPhone.insert(") ", at: 4)
+    formattedPhone.insert("-", at: 9)
+    return formattedPhone as String
+}
+
 func formatCurrency(_ number: Float?) -> String {
     if number == nil {
         return "$0.00"
@@ -73,6 +87,24 @@ func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
     default:
         return defaultValue
     }
+}
+
+func roundDate(date: Date, toNearestMinutes minutes: Int) -> Date {
+    let calendar = Calendar.current
+    let nextDiff = minutes - calendar.component(.minute, from: date) % minutes
+    if nextDiff == minutes {
+        return date
+    }
+    return calendar.date(byAdding: .minute, value: nextDiff, to: date) ?? date
+}
+
+func showError(currentViewController: UIViewController, error: Error) {
+    print("\(error)")
+    DispatchQueue.main.async(execute:{
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        currentViewController.present(alert, animated: true, completion: nil)
+    })
 }
 
 func dateAdjustedByDays(date: Date, days: Int) -> Date {
