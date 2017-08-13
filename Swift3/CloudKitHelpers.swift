@@ -19,6 +19,16 @@ func referencesToRecordNames(references: CKRecordValue?) -> String {
     return recordNames.joined(separator: ",")
 }
 
+func referencesToRecordNamesArray(references: CKRecordValue?) -> [String] {
+    var recordNames = [String]()
+    if let refs = references as? [CKReference] {
+        for r in refs {
+            recordNames.append(r.recordID.recordName)
+        }
+    }
+    return recordNames
+}
+
 func recordToData(record: CKRecord) -> NSData {
     let archivedData = NSMutableData()
     let archiver = NSKeyedArchiver(forWritingWith: archivedData)
