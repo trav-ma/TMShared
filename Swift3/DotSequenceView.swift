@@ -30,10 +30,14 @@ class DotSequenceView: UIView {
             let colorEmpty = emptyColor ?? .lightGray
             line.backgroundColor = colorFill
             self.addSubview(line)
-            let padding = (line.frame.width - self.frame.height) / CGFloat(totalCount - 1) - self.frame.height
+            var circleSize = self.frame.height
+            if circleSize * CGFloat(totalCount) > line.frame.width {
+                circleSize /= 2
+            }
+            let padding = (line.frame.width - circleSize) / CGFloat(totalCount - 1) - circleSize
             var offset: CGFloat = line.frame.minX
             for i in 0 ..< totalCount {
-                let circle = UIView(frame: CGRect(x: offset, y: 0, width: self.frame.height, height: self.frame.height))
+                let circle = UIView(frame: CGRect(x: offset, y: (self.frame.height - circleSize) / 2, width: circleSize, height: circleSize))
                 circle.layer.cornerRadius = circle.frame.width / 2
                 if i < fillCount {
                     circle.backgroundColor = colorFill
@@ -47,17 +51,21 @@ class DotSequenceView: UIView {
                 circles.append(circle)
                 offset += circle.frame.width + padding
             }
-            animateCircles()
+            var timing = 0.4
+            if totalCount > 4 {
+                timing = max(1.0 - (Double(totalCount) / 10.0), 0.1)
+            }
+            animateCircles(timing: timing)
         }
     }
     
-    func animateCircles() {
+    func animateCircles(timing: TimeInterval) {
         if let lastCircle = circles.last {
             for i in 0 ..< circles.count {
                 let circle = circles[i]
                 let targetFrame = circle.frame
                 circle.frame = lastCircle.frame
-                UIView.animate(withDuration: 0.6, delay: Double(i) * 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                UIView.animate(withDuration: timing, delay: Double(i) * timing, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
                     circle.alpha = 1
                     circle.frame = targetFrame
                 }, completion: nil)
