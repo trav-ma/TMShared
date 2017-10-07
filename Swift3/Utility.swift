@@ -11,13 +11,12 @@ import UIKit
 let imagesPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/images/"
 
 func formatCurrency(_ number: NSNumber?) -> String {
-    if number == nil {
+    guard let number = number else {
         return "$0.00"
-    } else {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter.string(from: number!)!
     }
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter.string(from: number) ?? "$0.00"
 }
 
 func formatPhone(_ phone: String?) -> String {
@@ -35,13 +34,21 @@ func formatPhone(_ phone: String?) -> String {
 }
 
 func formatCurrency(_ number: Float?) -> String {
-    if number == nil {
+    guard let number = number else {
         return "$0.00"
-    } else {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter.string(from: NSNumber(value: number!))!
     }
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter.string(from: number as NSNumber) ?? "$0.00"
+}
+
+func formatCurrency(_ number: Double?) -> String {
+    guard let number = number else {
+        return "$0.00"
+    }
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter.string(from: number as NSNumber) ?? "$0.00"
 }
 
 func addCommas(toInt int: Int) -> String {
