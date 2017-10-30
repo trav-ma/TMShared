@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,52 +15,79 @@
             <objects>
                 <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ro-bk-zy3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHB-wn-4dP">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHB-wn-4dP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bmY-dW-IXX">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bmY-dW-IXX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="px6-rt-pgq">
-                                            <rect key="frame" x="47" y="74" width="280" height="200"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="px6-rt-pgq">
+                                            <rect key="frame" x="48" y="74" width="279" height="200"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="f67-qN-X1e"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Service History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-wf-5lp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-wf-5lp">
                                             <rect key="frame" x="8" y="44" width="359" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="Xw2-j3-tUv"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
-                                            <rect key="frame" x="47" y="282" width="80" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
+                                            <rect key="frame" x="48" y="282" width="80" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="4YO-ca-A77"/>
+                                                <constraint firstAttribute="height" constant="40" id="gmr-df-Lk4"/>
+                                            </constraints>
                                             <state key="normal" title="Dimiss"/>
                                             <connections>
                                                 <action selector="btnDismissTap:" destination="Mtn-RQ-vee" eventType="touchUpInside" id="gVY-Vh-aAE"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
                                             <rect key="frame" x="247" y="282" width="80" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="69h-1M-I7D"/>
+                                                <constraint firstAttribute="height" constant="40" id="P4C-2U-NIE"/>
+                                            </constraints>
                                             <state key="normal" title="Save"/>
                                             <connections>
                                                 <action selector="btnSaveTap:" destination="Mtn-RQ-vee" eventType="touchUpInside" id="WeG-oW-XaC"/>
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="U5x-YV-6fm" firstAttribute="leading" secondItem="bmY-dW-IXX" secondAttribute="leading" constant="48" id="2as-hP-giT"/>
+                                        <constraint firstAttribute="trailing" secondItem="px6-rt-pgq" secondAttribute="trailing" constant="48" id="3b0-r5-xpz"/>
+                                        <constraint firstAttribute="trailing" secondItem="AgE-Jr-OJs" secondAttribute="trailing" constant="48" id="BgS-UJ-f0r"/>
+                                        <constraint firstItem="px6-rt-pgq" firstAttribute="top" secondItem="WI7-wf-5lp" secondAttribute="bottom" constant="8" id="GME-Y2-sys"/>
+                                        <constraint firstItem="AgE-Jr-OJs" firstAttribute="top" secondItem="px6-rt-pgq" secondAttribute="bottom" constant="8" id="LKS-zv-Crj"/>
+                                        <constraint firstItem="WI7-wf-5lp" firstAttribute="leading" secondItem="bmY-dW-IXX" secondAttribute="leading" constant="8" id="RVY-WH-mLW"/>
+                                        <constraint firstItem="U5x-YV-6fm" firstAttribute="top" secondItem="px6-rt-pgq" secondAttribute="bottom" constant="8" id="S4t-DO-m5R"/>
+                                        <constraint firstItem="WI7-wf-5lp" firstAttribute="top" secondItem="bmY-dW-IXX" secondAttribute="top" constant="44" id="S7z-SO-xTK"/>
+                                        <constraint firstItem="px6-rt-pgq" firstAttribute="leading" secondItem="bmY-dW-IXX" secondAttribute="leading" constant="48" id="c6W-gN-k4i"/>
+                                        <constraint firstAttribute="trailing" secondItem="WI7-wf-5lp" secondAttribute="trailing" constant="8" id="wBJ-Cz-Z5O"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fHB-wn-4dP" firstAttribute="leading" secondItem="Pnr-Ed-xN5" secondAttribute="leading" id="FNe-2s-9xl"/>
+                            <constraint firstItem="fHB-wn-4dP" firstAttribute="top" secondItem="2Ro-bk-zy3" secondAttribute="top" id="Noj-rO-W4U"/>
+                            <constraint firstAttribute="bottom" secondItem="fHB-wn-4dP" secondAttribute="bottom" id="R3k-5j-dnd"/>
+                            <constraint firstItem="fHB-wn-4dP" firstAttribute="trailing" secondItem="Pnr-Ed-xN5" secondAttribute="trailing" id="g9R-OK-gr9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pnr-Ed-xN5"/>
                     </view>
                     <connections>

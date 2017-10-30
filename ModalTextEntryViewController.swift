@@ -17,7 +17,7 @@ class ModalTextEntryViewController: UIViewController {
     @IBOutlet weak var btnDismiss: UIButton!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var textViewNote: UITextView!
-    var borderColor: UIColor?
+    var color: UIColor = .white
     var titleText: String?
     var titleFont: UIFont?
     var iconDismiss: UIImage?
@@ -27,13 +27,11 @@ class ModalTextEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let borderColor = borderColor {
-            textViewNote.layer.borderColor = borderColor.cgColor
-            textViewNote.layer.borderWidth = 2
-            textViewNote.layer.cornerRadius = 12
-            btnSave.tintColor = borderColor
-            btnDismiss.tintColor = borderColor
-        }
+        view.tintColor = color
+        textViewNote.layer.borderColor = view.tintColor.cgColor
+        textViewNote.layer.borderWidth = 2
+        textViewNote.layer.cornerRadius = 12
+        textViewNote.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         labelTitle.text = titleText
         textViewNote.text = initialText
         if let titleFont = titleFont {
