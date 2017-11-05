@@ -41,6 +41,7 @@ class ModalNumberEntryViewController: UIViewController {
     var titleFont: UIFont?
     var iconDismiss: UIImage?
     var iconSave: UIImage?
+    var iconBackspace: UIImage?
     var value: Double = 0
     var precision: Int = 0
     var delegate: ModalNumberEntryViewControllerDelegate?
@@ -67,6 +68,10 @@ class ModalNumberEntryViewController: UIViewController {
         if let iconDismiss = iconDismiss {
             btnDismiss.setImage(iconDismiss, for: .normal)
             btnDismiss.setTitle("", for: .normal)
+        }
+        if let iconBackspace = iconBackspace {
+            btnBackspace.setImage(iconBackspace, for: .normal)
+            btnBackspace.setTitle("", for: .normal)
         }
         buttons = [
             btn0,

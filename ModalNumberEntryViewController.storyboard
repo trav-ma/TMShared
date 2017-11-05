@@ -198,7 +198,7 @@
                                                                 <constraint firstAttribute="width" constant="60" id="HLl-y8-jwO"/>
                                                                 <constraint firstAttribute="height" constant="60" id="Sqj-hV-igE"/>
                                                             </constraints>
-                                                            <state key="normal" image="chevron-left-a"/>
+                                                            <state key="normal" title="&lt;"/>
                                                             <connections>
                                                                 <action selector="btnBackspaceTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="Mea-Of-Wn5"/>
                                                             </connections>
@@ -282,7 +282,4 @@
             <point key="canvasLocation" x="4981.6000000000004" y="2009.8522167487686"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chevron-left-a" width="25" height="25"/>
-    </resources>
 </document>
