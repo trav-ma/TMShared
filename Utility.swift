@@ -23,7 +23,7 @@ func formatPhone(_ phone: String?) -> String {
     guard let phone = phone else {
         return ""
     }
-    if phone.isEmpty || phone.characters.count < 10 {
+    if phone.isEmpty || phone.count < 10 {
         return phone
     }
     let formattedPhone = NSMutableString(string: phone)

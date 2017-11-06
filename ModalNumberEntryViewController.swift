@@ -14,8 +14,8 @@ protocol ModalNumberEntryViewControllerDelegate {
 
 extension String {
     func leftPadding(toLength: Int, withPad: String = " ") -> String {
-        guard toLength > self.characters.count else { return self }
-        let padding = String(repeating: withPad, count: toLength - self.characters.count)
+        guard toLength > self.count else { return self }
+        let padding = String(repeating: withPad, count: toLength - self.count)
         return padding + self
     }
 }
