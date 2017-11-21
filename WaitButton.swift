@@ -10,7 +10,8 @@ import UIKit
 
 class WaitButton: UIButton {
     let activity = UIActivityIndicatorView()
-    private var buttonTitle = ""
+    private var tempTitle = ""
+    private var tempImage: UIImage?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,14 +24,21 @@ class WaitButton: UIButton {
     
     func wait() {
         self.isEnabled = false
-        buttonTitle = self.title(for: .normal) ?? ""
+        tempTitle = self.title(for: .normal) ?? ""
+        tempImage = self.imageView?.image
         self.setTitle("", for: .normal)
+        self.setImage(nil, for: .normal)
         activity.startAnimating()
     }
     
-    func stopWaiting() {
+    func stopWaiting(newTitle: String? = nil) {
         self.isEnabled = true
-        self.setTitle(buttonTitle, for: .normal)
+        if let newTitle = newTitle {
+            self.setTitle(newTitle, for: .normal)
+        } else {
+            self.setTitle(tempTitle, for: .normal)
+        }
+        self.imageView?.image = tempImage
         activity.stopAnimating()
     }
 
