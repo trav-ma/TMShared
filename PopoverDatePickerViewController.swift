@@ -17,7 +17,7 @@ class PopoverDatePickerViewController: UIViewController {
     var date: Date?
     var delegate: PopoverDatePickerViewControllerDelegate?
     var borderColor: UIColor?
-    var shouldShowTime = false
+    var minuteInterval = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,12 @@ class PopoverDatePickerViewController: UIViewController {
             self.view.layer.borderWidth = 2
             self.view.layer.cornerRadius = 12
         }
-        datePicker.datePickerMode = shouldShowTime ? .dateAndTime : .date
-        datePicker.minuteInterval = 5
+        if minuteInterval > 0 {
+            datePicker.datePickerMode = .dateAndTime
+            datePicker.minuteInterval = minuteInterval
+        } else {
+            datePicker.datePickerMode = .date
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
