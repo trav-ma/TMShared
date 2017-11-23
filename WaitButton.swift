@@ -38,7 +38,7 @@ class WaitButton: UIButton {
         } else {
             self.setTitle(tempTitle, for: .normal)
         }
-        self.imageView?.image = tempImage
+        self.setImage(tempImage, for: .normal)
         activity.stopAnimating()
     }
 
