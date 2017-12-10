@@ -43,29 +43,27 @@ class PopoverDatePickerViewController: UIViewController {
 
 }
 
-
-/* Usage
- 
+/*
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "seguePopoverDatePicker" {
-        self.view.endEditing(true)
-        let vc = segue.destination as! PopoverDatePickerViewController
-        vc.date = selectedDate
-        vc.delegate = self
-        let popoverController = vc.popoverPresentationController!
-        popoverController.delegate = self
-        popoverController.backgroundColor = UIColor.white
-        popoverController.sourceRect = btnDate.frame
-        popoverController.sourceView = btnDate.superview
+    if segue.identifier == "PopoverDatePickerViewController" {
+        if let vc = segue.destination as? PopoverDatePickerViewController, let popoverController = vc.popoverPresentationController {
+            vc.date = selectedDate
+            vc.delegate = self
+            popoverController.delegate = self
+            popoverController.backgroundColor = UIColor.white
+            popoverController.sourceRect = btnDate.frame
+            popoverController.sourceView = btnDate.superview
+        }
         return
     }
+    
 }
 
 extension MyViewController: PopoverDatePickerViewControllerDelegate {
     
     func popoverDatePickerViewDidChange(date: Date) {
         selectedDate = date
-        displayDate()
+        btnDate.setTitle(formatDate(selectedDate, format: "MM/dd/yyyy"), for: .normal)
     }
     
 }
@@ -77,9 +75,4 @@ extension MyViewController: UIPopoverPresentationControllerDelegate {
     }
     
 }
-
-func displayDate() {
-    labelDate.text = formatDate(selectedDate, format: "MM/dd/yyyy")
-}
- 
 */

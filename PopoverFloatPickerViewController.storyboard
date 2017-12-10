@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7yg-L8-hLe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popover Float Picker View Controller-->
+        <scene sceneID="jvn-Ln-ASX">
+            <objects>
+                <viewController id="7yg-L8-hLe" customClass="PopoverFloatPickerViewController" customModule="Body_Stack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JqY-wd-jeK">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mau-aS-ESO">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7yg-L8-hLe" id="QQu-DB-amP"/>
+                                    <outlet property="delegate" destination="7yg-L8-hLe" id="srE-Ku-KGH"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mau-aS-ESO" firstAttribute="bottom" secondItem="xrw-AP-ZRh" secondAttribute="bottom" id="ejg-Ey-HBR"/>
+                            <constraint firstItem="mau-aS-ESO" firstAttribute="leading" secondItem="xrw-AP-ZRh" secondAttribute="leading" id="fdb-gZ-bPe"/>
+                            <constraint firstItem="mau-aS-ESO" firstAttribute="top" secondItem="xrw-AP-ZRh" secondAttribute="top" id="o83-qg-JzN"/>
+                            <constraint firstItem="mau-aS-ESO" firstAttribute="trailing" secondItem="xrw-AP-ZRh" secondAttribute="trailing" id="tlx-kC-hJj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xrw-AP-ZRh"/>
+                    </view>
+                    <size key="freeformSize" width="280" height="200"/>
+                    <connections>
+                        <outlet property="picker" destination="mau-aS-ESO" id="mKC-nh-NKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmN-pm-OX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390.39999999999998" y="-233.88305847076464"/>
+        </scene>
+    </scenes>
+</document>
