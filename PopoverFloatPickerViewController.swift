@@ -26,7 +26,7 @@ class PopoverFloatPickerViewController: UIViewController {
             self.view.layer.borderWidth = 2
             self.view.layer.cornerRadius = 12
         }
-        let decimals = ceil(value.truncatingRemainder(dividingBy: 1) * 10)
+        let decimals = Int(value.truncatingRemainder(dividingBy: 1) * 10)
         let whole = floor(value)
         picker.selectRow(Int(whole), inComponent: 0, animated: true)
         picker.selectRow(Int(decimals), inComponent: 1, animated: true)
@@ -52,6 +52,10 @@ extension PopoverFloatPickerViewController: UIPickerViewDelegate, UIPickerViewDa
         } else {
             return 10
         }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return component == 0 ? 60 : 30
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

@@ -67,8 +67,24 @@ func addCommas(toNumber number: NSNumber?) -> String {
     }
 }
 
-func colorGray(_ rgb: CGFloat) -> UIColor {
-    return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
+//after creation: self.view.layer.insertSublayer(gradient, at: 0)
+func gradientLayer(frame: CGRect, topLeftColor: UIColor, bottomRightColor: UIColor) -> CAGradientLayer {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.frame = frame
+    gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+    gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+    gradientLayer.colors = [topLeftColor.cgColor, bottomRightColor.cgColor]
+    return gradientLayer
+}
+
+struct Platform {
+    static let isSimulator: Bool = {
+        #if arch(i386) || arch(x86_64)
+            return true
+        #else
+            return false
+        #endif
+    }()
 }
 
 func jsonDataToObject(_ data: Data?) -> Any? {

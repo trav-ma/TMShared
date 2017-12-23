@@ -25,10 +25,22 @@
                                     <outlet property="delegate" destination="7yg-L8-hLe" id="srE-Ku-KGH"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-Ia-aL0">
+                                <rect key="frame" x="135" y="85" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="LI1-av-q8L"/>
+                                    <constraint firstAttribute="height" constant="30" id="igY-oW-VgY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ohv-Ia-aL0" firstAttribute="top" secondItem="xrw-AP-ZRh" secondAttribute="top" constant="85" id="aGq-Nd-FUd"/>
                             <constraint firstItem="mau-aS-ESO" firstAttribute="bottom" secondItem="xrw-AP-ZRh" secondAttribute="bottom" id="ejg-Ey-HBR"/>
+                            <constraint firstItem="ohv-Ia-aL0" firstAttribute="leading" secondItem="xrw-AP-ZRh" secondAttribute="leading" constant="135" id="eqW-ey-uZe"/>
                             <constraint firstItem="mau-aS-ESO" firstAttribute="leading" secondItem="xrw-AP-ZRh" secondAttribute="leading" id="fdb-gZ-bPe"/>
                             <constraint firstItem="mau-aS-ESO" firstAttribute="top" secondItem="xrw-AP-ZRh" secondAttribute="top" id="o83-qg-JzN"/>
                             <constraint firstItem="mau-aS-ESO" firstAttribute="trailing" secondItem="xrw-AP-ZRh" secondAttribute="trailing" id="tlx-kC-hJj"/>
