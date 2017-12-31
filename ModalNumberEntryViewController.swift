@@ -8,6 +8,26 @@
 
 import UIKit
 
+/* usage
+if segue.identifier == "ModalNumberEntryViewController" {
+    if let vc = segue.destination as? ModalNumberEntryViewController {
+        vc.color = self.view.tintColor
+        vc.titleFont = labelAvatarTitle.font
+        vc.titleText = "Amount"
+        vc.iconDismiss = #imageLiteral(resourceName: "cross-ui")
+        vc.iconSave = #imageLiteral(resourceName: "check-ui")
+        vc.iconBackspace = #imageLiteral(resourceName: "chevron-left")
+        vc.delegate = self
+        vc.precision = 2
+        vc.symbol = "$"
+        if labelDescription.text != "0" {
+            vc.value = Double(selectedAmount)
+        }
+    }
+    return
+}
+*/
+
 protocol ModalNumberEntryViewControllerDelegate {
     func modalNumberEntryViewDidChange(value: Double)
 }

@@ -8,6 +8,23 @@
 
 import UIKit
 
+/* usage
+if segue.identifier == "ModalTextEntryViewController" {
+    if let vc = segue.destination as? ModalTextEntryViewController {
+        vc.color = self.view.tintColor
+        vc.titleFont = labelAvatarTitle.font
+        vc.titleText = "Description/Location"
+        vc.iconDismiss = #imageLiteral(resourceName: "cross-ui")
+        vc.iconSave = #imageLiteral(resourceName: "check-ui")
+        vc.delegate = self
+        if labelDescription.text != kDefaultDescription {
+            vc.initialText = labelDescription.text
+        }
+    }
+    return
+}
+*/
+
 protocol ModalTextEntryViewControllerDelegate {
     func modalTextEntryViewDidChangeText(text: String)
 }

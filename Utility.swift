@@ -67,7 +67,19 @@ func addCommas(toNumber number: NSNumber?) -> String {
     }
 }
 
-//after creation: self.view.layer.insertSublayer(gradient, at: 0)
+
+/* gradient usage
+fileprivate var gradient: CAGradientLayer?
+override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    if gradient == nil {
+        gradient = gradientLayer(frame: self.view.bounds, topLeftColor: colorGrandient.lighter(), bottomRightColor: colorGrandient.darker())
+        if let gradient = gradient {
+            self.view.layer.insertSublayer(gradient, at: 0)
+        }
+    }
+}
+*/
 func gradientLayer(frame: CGRect, topLeftColor: UIColor, bottomRightColor: UIColor) -> CAGradientLayer {
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = frame

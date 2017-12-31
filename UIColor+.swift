@@ -29,37 +29,22 @@ extension UIColor {
         return UIColor(red: rgb/255, green: rgb/255, blue: rgb/255, alpha: 1)
     }
     
-    class func colorFromHex(hexString:String) -> UIColor {
-        
-        func clean(hexString: String) -> String {
-            var cleanedHexString = String()
-            if (hexString[hexString.startIndex] == "#") {
-                cleanedHexString = hexString.substring(from: hexString.index(hexString.startIndex, offsetBy: 1))
-            }
-            return cleanedHexString
+    class func colorFromHex(hexString: String) -> UIColor {
+        var cString = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        if cString.hasPrefix("#") {
+            cString.remove(at: cString.startIndex)
         }
-        
-        let cleanedHexString = clean(hexString: hexString)
-        if let cachedColor = UIColor.getColorFromCache(hexString: cleanedHexString) {
-            return cachedColor
+        if cString.count != 6 {
+            return UIColor.gray
         }
-        let scanner = Scanner(string: cleanedHexString)
-        var value:UInt32 = 0
-        if (scanner.scanHexInt32(&value)) {
-            let intValue = UInt32(value)
-            let mask:UInt32 = 0xFF
-            let red = intValue >> 16 & mask
-            let green = intValue >> 8 & mask
-            let blue = intValue & mask
-            let colors:[UInt32] = [red, green, blue]
-            let normalised = normalise(colors: colors)
-            let newColor = UIColor(red: normalised[0], green: normalised[1], blue: normalised[2], alpha: 1)
-            UIColor.storeColorInCache(hexString: cleanedHexString, color: newColor)
-            return newColor
-        } else {
-            print("Error: Couldn't convert the hex string to a number, returning UIColor.whiteColor() instead.")
-            return UIColor.white
-        }
+        var rgbValue: UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     private class func normalise(colors: [UInt32]) -> [CGFloat]{
