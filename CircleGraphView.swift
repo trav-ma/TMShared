@@ -45,7 +45,7 @@ class CircleGraphView: UIView {
         drawAnimation.fromValue = 0.0
         drawAnimation.toValue = 1.0
         drawAnimation.duration = 1.0
-        drawAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        drawAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         var startDegree: CGFloat = 0
         for index in 0 ..< degrees.count {
             let degree = degrees[index]

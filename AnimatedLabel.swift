@@ -95,8 +95,8 @@ class AnimatedLabel: UILabel {
 	
 	fileprivate func addDisplayLink() {
 		timer = CADisplayLink(target: self, selector: #selector(self.updateValue(timer:)))
-		timer?.add(to: .main, forMode: .defaultRunLoopMode)
-		timer?.add(to: .main, forMode: .UITrackingRunLoopMode)
+        timer?.add(to: .main, forMode: .default)
+        timer?.add(to: .main, forMode: .tracking)
 	}
 	
 	fileprivate func update(t: Float) -> Float {

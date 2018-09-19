@@ -11,7 +11,7 @@ import CloudKit
 
 func referencesToRecordNames(references: CKRecordValue?) -> String {
     var recordNames = [String]()
-    if let refs = references as? [CKReference] {
+    if let refs = references as? [CKRecord.Reference] {
         for r in refs {
             recordNames.append(r.recordID.recordName)
         }
@@ -21,7 +21,7 @@ func referencesToRecordNames(references: CKRecordValue?) -> String {
 
 func referencesToRecordNamesArray(references: CKRecordValue?) -> [String] {
     var recordNames = [String]()
-    if let refs = references as? [CKReference] {
+    if let refs = references as? [CKRecord.Reference] {
         for r in refs {
             recordNames.append(r.recordID.recordName)
         }
