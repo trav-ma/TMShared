@@ -146,6 +146,17 @@ func dateAdjustedByDays(date: Date, days: Int) -> Date {
     return Calendar.current.date(byAdding: .day, value: days, to: date)!
 }
 
+func daysBetween(start: Date, end: Date) -> Int {
+    let currentCalendar = Calendar.current
+    guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
+        return 0
+    }
+    guard let end = currentCalendar.ordinality(of: .day, in: .era, for: end) else {
+        return 0
+    }
+    return end - start
+}
+
 func generatePasscode(_ length : Int) -> String {
     let letters : NSString = "1234567890"
     let randomString : NSMutableString = NSMutableString(capacity: length)
