@@ -10,6 +10,25 @@ import UIKit
 
 let imagesPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/images/"
 
+var timestamps = [String: Date]()
+
+func startTimestamp(_ name: String) {
+    let date = Date()
+    timestamps[name] = date
+    print("TIMESTAMP START \(name) = \(date)")
+}
+
+func endTimestamp(_ name: String) {
+    let date = Date()
+    if let startDate = timestamps[name] {
+        timestamps.removeValue(forKey: name)
+        print("TIMESTAMP END \(name) - \(date)")
+        print("TIMESTAMP ELAPSED TIME \(name) - \(date.timeIntervalSince(startDate).stringTime)")
+    } else {
+        print("TIMESTAMP END \(name) - Doesn't exist")
+    }
+}
+
 func formatCurrency(_ number: NSNumber?) -> String {
     guard let number = number else {
         return "$0.00"
@@ -142,10 +161,6 @@ func showError(currentViewController: UIViewController, error: Error) {
     })
 }
 
-func dateAdjustedByDays(date: Date, days: Int) -> Date {
-    return Calendar.current.date(byAdding: .day, value: days, to: date)!
-}
-
 func daysBetween(start: Date, end: Date) -> Int {
     let currentCalendar = Calendar.current
     guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
@@ -155,6 +170,11 @@ func daysBetween(start: Date, end: Date) -> Int {
         return 0
     }
     return end - start
+}
+
+
+func dateAdjustedByDays(date: Date, days: Int) -> Date {
+    return Calendar.current.date(byAdding: .day, value: days, to: date)!
 }
 
 func generatePasscode(_ length : Int) -> String {
@@ -270,4 +290,34 @@ func animateShakes(view: UIView, shakes: Int, direction: Int) {
             d = d * -1
             animateShakes(view: view, shakes: s, direction: d)
     })
+}
+
+extension TimeInterval {
+    private var milliseconds: Int {
+        return Int((truncatingRemainder(dividingBy: 1)) * 1000)
+    }
+    
+    private var seconds: Int {
+        return Int(self) % 60
+    }
+    
+    private var minutes: Int {
+        return (Int(self) / 60 ) % 60
+    }
+    
+    private var hours: Int {
+        return Int(self) / 3600
+    }
+    
+    var stringTime: String {
+        if hours != 0 {
+            return "\(hours)h \(minutes)m \(seconds)s"
+        } else if minutes != 0 {
+            return "\(minutes)m \(seconds)s"
+        } else if milliseconds != 0 {
+            return "\(seconds)s \(milliseconds)ms"
+        } else {
+            return "\(seconds)s"
+        }
+    }
 }

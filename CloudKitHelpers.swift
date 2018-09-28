@@ -6,7 +6,7 @@
 //  Copyright © 2016 Travis Ma. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 
 func referencesToRecordNames(references: CKRecordValue?) -> String {
@@ -44,6 +44,22 @@ func dataToRecord(data: NSData) -> CKRecord? {
     return CKRecord(coder: unarchiver)
 }
 
+func showCKError(currentViewController: UIViewController, error: Error) {
+    var errorMessage = error.localizedDescription
+    if let error = error as? CKError {
+        switch error.code {
+        case .serverRecordChanged, .changeTokenExpired:
+            errorMessage = "Looks like the data on your device is too old to update. Please do a refresh and try again."
+        default:
+            break
+        }
+    }
+    DispatchQueue.main.async(execute:{
+        let alert = UIAlertController(title: "Oops!", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        currentViewController.present(alert, animated: true, completion: nil)
+    })
+}
 
 func nullCheckInt(_ int: CKRecordValue?) -> Int {
     if let int = int as? Int {
