@@ -45,6 +45,7 @@ class ModalTextEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.tintColor = color
+        textViewNote.tintColor = .black
         textViewNote.layer.borderColor = view.tintColor.cgColor
         textViewNote.layer.borderWidth = 2
         textViewNote.layer.cornerRadius = 12
