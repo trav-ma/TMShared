@@ -172,9 +172,13 @@ func daysBetween(start: Date, end: Date) -> Int {
     return end - start
 }
 
-
 func dateAdjustedByDays(date: Date, days: Int) -> Date {
     return Calendar.current.date(byAdding: .day, value: days, to: date)!
+}
+
+func dateAdjustedByHoursAndMinutes(date: Date, hours: Int, minutes: Int) -> Date {
+    let minuteDate = Calendar.current.date(byAdding: .minute, value: minutes, to: date)!
+    return Calendar.current.date(byAdding: .hour, value: hours, to: minuteDate)!
 }
 
 func generatePasscode(_ length : Int) -> String {
@@ -188,11 +192,19 @@ func generatePasscode(_ length : Int) -> String {
     return randomString as String
 }
 
-func dateAtTime(date: Date, hours: Int, minutes: Int) -> Date {
+func dateAtTime(date: Date, hours: Int, minutes: Int, useUtcDate: Bool = false) -> Date {
     let calendar = Calendar(identifier: .gregorian)
     var hrs = hours
     var mins = minutes
     var d = date
+    if useUtcDate { //cuts the date portion off and uses as is instead of converting to user's timezone before applying hours/minutes
+        let df = DateFormatter()
+        df.timeZone = TimeZone(abbreviation: "UTC")
+        df.dateFormat = "yyyy-MM-dd"
+        let dateString = df.string(from: date)
+        df.timeZone = TimeZone.current
+        d = df.date(from: dateString)!
+    }
     if minutes > 60 {
         hrs += Int(floor(Double(minutes) / 60))
         mins = Int(Double(minutes).truncatingRemainder(dividingBy: 60))
