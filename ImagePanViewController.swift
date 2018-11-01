@@ -75,7 +75,7 @@ class ImagePanViewController: UIViewController {
         scrollBarView.isUserInteractionEnabled = false
         self.view.addSubview(scrollBarView)
         displayLink = CADisplayLink(target: self, selector: #selector(ImagePanViewController.displayLinkUpdate))
-        displayLink!.add(to: RunLoop.main, forMode: .commonModes)
+        displayLink!.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ImagePanViewController.toggleMotionBasedPan))
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
