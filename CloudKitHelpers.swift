@@ -44,8 +44,18 @@ func dataToRecord(data: NSData) -> CKRecord? {
     return CKRecord(coder: unarchiver)
 }
 
-func showCKError(currentViewController: UIViewController, error: Error) {
+func ckErrorMessage(error: Error) -> String {
     var errorMessage = error.localizedDescription
+    if let error = error as? CKError {
+        if let msg = (error.errorUserInfo[NSUnderlyingErrorKey] as? NSError)?.localizedDescription {
+            errorMessage = msg
+        }
+    }
+    return errorMessage
+}
+
+func showCKError(currentViewController: UIViewController, error: Error) {
+    var errorMessage = ckErrorMessage(error: error)
     if let error = error as? CKError {
         switch error.code {
         case .serverRecordChanged, .changeTokenExpired:
@@ -75,4 +85,20 @@ func nullCheckString(_ string: CKRecordValue?) -> String {
     } else {
         return ""
     }
+}
+
+func createCloudKitAsset(from data: Data) -> CKAsset? {
+    var returnAsset: CKAsset? = nil
+    let tempStr = ProcessInfo.processInfo.globallyUniqueString
+    let filename = "\(tempStr)_file.bin"
+    let baseURL = URL(fileURLWithPath: NSTemporaryDirectory())
+    let fileURL = baseURL.appendingPathComponent(filename, isDirectory: false)
+    do {
+        try data.write(to: fileURL, options: [.atomicWrite])
+        returnAsset = CKAsset(fileURL: fileURL)
+    } catch {
+        print("Error creating asset: \(error)")
+    }
+    return returnAsset
+    
 }
