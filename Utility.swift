@@ -128,20 +128,20 @@ func jsonDataToObject(_ data: Data?) -> Any? {
     return nil
 }
 
-func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
-    switch (UIScreen.main.nativeBounds.size.height) {
-    case 960, 480:
-        return 3.5
-    case 1136:
-        return 4
-    case 1334:
-        return 4.7
-    case 2208:
-        return 5.5
-    default:
-        return defaultValue
-    }
-}
+//func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
+//    switch (UIScreen.main.nativeBounds.size.height) {
+//    case 960, 480:
+//        return 3.5
+//    case 1136:
+//        return 4
+//    case 1334:
+//        return 4.7
+//    case 2208:
+//        return 5.5
+//    default:
+//        return defaultValue
+//    }
+//}
 
 func roundDate(date: Date, toNearestMinutes minutes: Int) -> Date {
     let calendar = Calendar.current
@@ -170,6 +170,10 @@ func daysBetween(start: Date, end: Date) -> Int {
         return 0
     }
     return end - start
+}
+
+func guid() -> String {
+    return UUID().uuidString
 }
 
 func dateAdjustedByDays(date: Date, days: Int) -> Date {

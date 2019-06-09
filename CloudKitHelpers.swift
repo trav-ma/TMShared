@@ -30,18 +30,15 @@ func referencesToRecordNamesArray(references: CKRecordValue?) -> [String] {
 }
 
 func recordToData(record: CKRecord) -> NSData {
-    let archivedData = NSMutableData()
-    let archiver = NSKeyedArchiver(forWritingWith: archivedData)
-    archiver.requiresSecureCoding = true
-    record.encodeSystemFields(with: archiver)
-    archiver.finishEncoding()
-    return archivedData
+    let coder = NSKeyedArchiver(requiringSecureCoding: true)
+    record.encodeSystemFields(with: coder)
+    return coder.encodedData as NSData
 }
 
 func dataToRecord(data: NSData) -> CKRecord? {
-    let unarchiver = NSKeyedUnarchiver(forReadingWith: data as Data)
-    unarchiver.requiresSecureCoding = true
-    return CKRecord(coder: unarchiver)
+    let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: data as Data)
+    unarchiver?.requiresSecureCoding = true
+    return unarchiver == nil ? nil : CKRecord(coder: unarchiver!)
 }
 
 func ckErrorMessage(error: Error) -> String {

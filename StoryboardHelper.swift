@@ -38,6 +38,22 @@ extension StoryboardInstantiable where Self: UIViewController {
     
 }
 
+extension UIViewController {
+    
+    @IBAction func btnCloseTap(_ sender: Any) {
+        if let nc = self.navigationController {
+            if nc.viewControllers.first == self {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                nc.popViewController(animated: true)
+            }
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+}
+
 //To use this protocol the cell should has the identifier and nib name must have the same name like cell ID 
 protocol SingleReuseIdentifier: class {
 	static var identifier: String {get}
