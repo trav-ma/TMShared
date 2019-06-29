@@ -47,13 +47,6 @@ func ckErrorMessage(error: Error) -> String {
         if let msg = (error.errorUserInfo[NSUnderlyingErrorKey] as? NSError)?.localizedDescription {
             errorMessage = msg
         }
-    }
-    return errorMessage
-}
-
-func showCKError(currentViewController: UIViewController, error: Error) {
-    var errorMessage = ckErrorMessage(error: error)
-    if let error = error as? CKError {
         switch error.code {
         case .serverRecordChanged, .changeTokenExpired:
             errorMessage = "Looks like the data on your device is too old to update. Please do a refresh and try again."
@@ -61,6 +54,11 @@ func showCKError(currentViewController: UIViewController, error: Error) {
             break
         }
     }
+    return errorMessage
+}
+
+func showCKError(currentViewController: UIViewController, error: Error) {
+    let errorMessage = ckErrorMessage(error: error)
     DispatchQueue.main.async(execute:{
         let alert = UIAlertController(title: "Oops!", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
