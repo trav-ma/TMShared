@@ -56,7 +56,7 @@ class CircleGraphView: UIView {
             if index < colors.count {
                 circle.strokeColor = colors[index].cgColor
             } else {
-                circle.strokeColor = UIColor.lightGray.cgColor
+                circle.strokeColor = UIColor.tertiaryLabel.cgColor
             }
             circle.lineWidth = thickness
             self.layer.addSublayer(circle)

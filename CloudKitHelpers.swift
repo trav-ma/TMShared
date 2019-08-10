@@ -41,6 +41,23 @@ func dataToRecord(data: NSData) -> CKRecord? {
     return unarchiver == nil ? nil : CKRecord(coder: unarchiver!)
 }
 
+extension CKAccountStatus {
+    var description: String {
+        switch self {
+        case .available:
+            return "Available"
+        case .couldNotDetermine:
+            return "Could Not Determine"
+        case .noAccount:
+            return "No Account"
+        case .restricted:
+            return "Restricted"
+        default:
+            return "Unknown"
+        }
+    }
+}
+
 func ckErrorMessage(error: Error) -> String {
     var errorMessage = error.localizedDescription
     if let error = error as? CKError {
