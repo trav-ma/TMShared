@@ -128,20 +128,34 @@ func jsonDataToObject(_ data: Data?) -> Any? {
     return nil
 }
 
-//func phoneSizeInInches(defaultValue: Float = 4.7) -> Float {
-//    switch (UIScreen.main.nativeBounds.size.height) {
-//    case 960, 480:
-//        return 3.5
-//    case 1136:
-//        return 4
-//    case 1334:
-//        return 4.7
-//    case 2208:
-//        return 5.5
-//    default:
-//        return defaultValue
-//    }
-//}
+extension UIScreen {
+    func phoneSizeInInches() -> CGFloat {
+        switch (self.nativeBounds.size.height) {
+        case 960, 480:
+            return 3.5  //iPhone 4
+        case 1136:
+            return 4    //iPhone 5
+        case 1334:
+            return 4.7  //iPhone 6
+        case 2208:
+            return 5.5  //iPhone 6 Plus
+        case 2436:
+            return 5.8  //iPhone X
+        case 1792:
+            return 5.5  //iPhone XR
+        case 2688:
+            return 6.5  //iPhone XS Max
+        default:
+            let scale = self.scale
+            let ppi = scale * 163
+            let width = self.bounds.size.width * scale
+            let height = self.bounds.size.height * scale
+            let horizontal = width / ppi, vertical = height / ppi
+            let diagonal = sqrt(pow(horizontal, 2) + pow(vertical, 2))
+            return diagonal
+        }
+    }
+}
 
 func roundDate(date: Date, toNearestMinutes minutes: Int) -> Date {
     let calendar = Calendar.current
