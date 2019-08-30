@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ohy-29-qdi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qEX-hZ-H0A">
+                                <rect key="frame" x="90" y="271" width="234" height="354"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-h0-3rw">
+                                        <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
+                                        <state key="normal" title="AnimatedLabel"/>
+                                        <connections>
+                                            <segue destination="6y4-T3-d7H" kind="show" id="Rji-gr-0kX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge8-6W-wPP">
+                                        <rect key="frame" x="0.0" y="36" width="234" height="30"/>
+                                        <state key="normal" title="CircleGraphView"/>
+                                        <connections>
+                                            <segue destination="ICq-Su-1Wp" kind="show" id="U3G-X1-0T2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-Bq-Hw2">
+                                        <rect key="frame" x="0.0" y="72" width="234" height="30"/>
+                                        <state key="normal" title="DotSequenceView"/>
+                                        <connections>
+                                            <segue destination="IRA-f2-GeD" kind="show" id="EBq-h6-W8r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-Bs-Nb3">
+                                        <rect key="frame" x="0.0" y="108" width="234" height="30"/>
+                                        <state key="normal" title="ImagePanViewController"/>
+                                        <connections>
+                                            <segue destination="1mV-gZ-enK" kind="show" id="pod-ll-Fg3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80T-Bb-cHb">
+                                        <rect key="frame" x="0.0" y="144" width="234" height="30"/>
+                                        <state key="normal" title="ModalNumberEntryViewController"/>
+                                        <connections>
+                                            <segue destination="YrX-q3-qh4" kind="show" id="jgk-oA-Wy8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKb-hp-HNl">
+                                        <rect key="frame" x="0.0" y="180" width="234" height="30"/>
+                                        <state key="normal" title="ModalTextEntryViewController"/>
+                                        <connections>
+                                            <segue destination="9RC-Sj-DpL" kind="show" id="1bR-mi-ecJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YB-HF-sUR">
+                                        <rect key="frame" x="0.0" y="216" width="234" height="30"/>
+                                        <state key="normal" title="PopoverDatePickerViewController"/>
+                                        <connections>
+                                            <segue destination="i8b-IP-1rc" kind="show" id="1PM-Yt-2Fb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztg-eU-uba">
+                                        <rect key="frame" x="0.0" y="252" width="234" height="30"/>
+                                        <state key="normal" title="PopoverFloatPickerViewController"/>
+                                        <connections>
+                                            <segue destination="jnE-3W-qxa" kind="show" id="Tps-rz-2tr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-HO-QVS">
+                                        <rect key="frame" x="0.0" y="288" width="234" height="30"/>
+                                        <state key="normal" title="SpiralGraphView"/>
+                                        <connections>
+                                            <segue destination="B7h-3u-taf" kind="show" id="rAT-76-6Cn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myO-wm-TMN">
+                                        <rect key="frame" x="0.0" y="324" width="234" height="30"/>
+                                        <state key="normal" title="WaitButton"/>
+                                        <connections>
+                                            <segue destination="1DY-7A-9Ho" kind="show" id="tfO-Fy-mwH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qEX-hZ-H0A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AKx-bu-qz0"/>
+                            <constraint firstItem="qEX-hZ-H0A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fdX-5z-BPF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="RMI-rq-SiV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="137.94642857142856"/>
+        </scene>
+        <!--AnimatedLabel-->
+        <scene sceneID="XaQ-QG-gpy">
+            <objects>
+                <viewController id="6y4-T3-d7H" customClass="AnimatedLabelDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gBz-Ma-hY0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FEb-8y-J6A">
+                                <rect key="frame" x="175.5" y="350.5" width="63" height="195"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-yH-pOr" customClass="AnimatedLabel" customModule="TMShared" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCO-vy-yap">
+                                        <rect key="frame" x="0.0" y="75" width="63" height="30"/>
+                                        <state key="normal" title="Int"/>
+                                        <connections>
+                                            <action selector="btnIntTap:" destination="6y4-T3-d7H" eventType="touchUpInside" id="m6M-Hn-dec"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DL-2c-0rK">
+                                        <rect key="frame" x="0.0" y="120" width="63" height="30"/>
+                                        <state key="normal" title="Float"/>
+                                        <connections>
+                                            <action selector="btnFloatTap:" destination="6y4-T3-d7H" eventType="touchUpInside" id="Y1t-7y-Qfm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHc-LA-qFu">
+                                        <rect key="frame" x="0.0" y="165" width="63" height="30"/>
+                                        <state key="normal" title="Currency"/>
+                                        <connections>
+                                            <action selector="btnCurrencyTap:" destination="6y4-T3-d7H" eventType="touchUpInside" id="OAg-Mt-Yyx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FEb-8y-J6A" firstAttribute="centerX" secondItem="gBz-Ma-hY0" secondAttribute="centerX" id="0Va-jg-Brw"/>
+                            <constraint firstItem="FEb-8y-J6A" firstAttribute="centerY" secondItem="gBz-Ma-hY0" secondAttribute="centerY" id="ySW-dT-e05"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2st-y9-CGc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="AnimatedLabel" id="Qgj-rH-aaX"/>
+                    <connections>
+                        <outlet property="animatedLabel" destination="xdf-yH-pOr" id="b4o-dL-o7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01B-AD-x2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-650"/>
+        </scene>
+        <!--ModalNumberEntryViewController-->
+        <scene sceneID="boR-s3-EO6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ModalNumberEntryViewController" id="nxU-S7-chu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ByN-JW-7ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2311" y="-246"/>
+        </scene>
+        <!--ModalNumberEntryViewController-->
+        <scene sceneID="vDA-gd-ghO">
+            <objects>
+                <viewController id="YrX-q3-qh4" customClass="ModalNumberEntryDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sgv-Aj-IOw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FsA-Jf-15p">
+                                <rect key="frame" x="113" y="372" width="188" height="152"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-RA-unT">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                        <state key="normal" title="99"/>
+                                        <connections>
+                                            <segue destination="nxU-S7-chu" kind="presentation" identifier="ModalNumberEntryViewControllerInt" id="8Ug-L9-GV5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf0-XM-d7W">
+                                        <rect key="frame" x="0.0" y="80" width="188" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                        <state key="normal" title="$99.99"/>
+                                        <connections>
+                                            <segue destination="nxU-S7-chu" kind="presentation" identifier="ModalNumberEntryViewControllerCurrency" id="98p-de-VIS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FsA-Jf-15p" firstAttribute="centerX" secondItem="Sgv-Aj-IOw" secondAttribute="centerX" id="4BJ-30-oHR"/>
+                            <constraint firstItem="FsA-Jf-15p" firstAttribute="centerY" secondItem="Sgv-Aj-IOw" secondAttribute="centerY" id="jpv-ah-eNG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eXD-Ey-yfS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ModalNumberEntryViewController" id="z6l-NI-ePJ"/>
+                    <connections>
+                        <outlet property="btnNumberCurrency" destination="zf0-XM-d7W" id="KTG-uR-wMp"/>
+                        <outlet property="btnNumberInt" destination="rgS-RA-unT" id="CUL-92-TAS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bk0-6F-MhR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.072463768116" y="137.94642857142856"/>
+        </scene>
+        <!--ModalTextEntryViewController-->
+        <scene sceneID="oEA-zP-zTk">
+            <objects>
+                <viewController id="9RC-Sj-DpL" customClass="ModalTextEntryDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TKD-kV-u57">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVa-ob-V7c">
+                                <rect key="frame" x="20" y="140" width="374" height="451"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="451" id="2do-2w-YzH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loS-WK-hng">
+                                <rect key="frame" x="187" y="599" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="J2e-Y9-YOM"/>
+                                    <constraint firstAttribute="width" constant="40" id="pKX-sM-KXb"/>
+                                </constraints>
+                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                <connections>
+                                    <segue destination="Sim-6q-jsT" kind="presentation" identifier="ModalTextEntryViewController" id="A7I-AC-bme"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="loS-WK-hng" firstAttribute="top" secondItem="ZVa-ob-V7c" secondAttribute="bottom" constant="8" id="5xn-Ip-JYP"/>
+                            <constraint firstItem="ZVa-ob-V7c" firstAttribute="top" secondItem="lGy-xe-D0R" secondAttribute="top" id="D0k-R9-FAx"/>
+                            <constraint firstItem="ZVa-ob-V7c" firstAttribute="leading" secondItem="lGy-xe-D0R" secondAttribute="leading" constant="20" id="LEe-sQ-SxH"/>
+                            <constraint firstItem="lGy-xe-D0R" firstAttribute="trailing" secondItem="ZVa-ob-V7c" secondAttribute="trailing" constant="20" id="bit-ti-Ajb"/>
+                            <constraint firstItem="loS-WK-hng" firstAttribute="centerX" secondItem="TKD-kV-u57" secondAttribute="centerX" id="hYg-pI-khg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lGy-xe-D0R"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ModalTextEntryViewController" id="vnI-mH-3nw"/>
+                    <connections>
+                        <outlet property="labelText" destination="ZVa-ob-V7c" id="Jfk-Dk-7jd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ6-bB-nnE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2834.7826086956525" y="137.94642857142856"/>
+        </scene>
+        <!--ModalTextEntryViewController-->
+        <scene sceneID="cHE-gh-hdj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ModalTextEntryViewController" id="Sim-6q-jsT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZjO-bh-xkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3224" y="-249"/>
+        </scene>
+        <!--SpiralGraphView-->
+        <scene sceneID="MbL-SG-IgJ">
+            <objects>
+                <viewController id="B7h-3u-taf" customClass="SpiralGraphDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3UN-Og-vkt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn2-eH-5fV" customClass="SpiralGraphView" customModule="TMShared" customModuleProvider="target">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="U9Z-LX-1VK"/>
+                                    <constraint firstAttribute="height" constant="300" id="g66-Mq-Tyg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cn2-eH-5fV" firstAttribute="centerY" secondItem="3UN-Og-vkt" secondAttribute="centerY" id="2g6-ey-yOD"/>
+                            <constraint firstItem="cn2-eH-5fV" firstAttribute="centerX" secondItem="3UN-Og-vkt" secondAttribute="centerX" id="NhC-ht-ug3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RxW-YC-zZ9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SpiralGraphView" id="JNK-YM-cZG"/>
+                    <connections>
+                        <outlet property="spiralGraphView" destination="cn2-eH-5fV" id="9vE-gG-bQ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81V-SC-Fi3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="924.77678571428567"/>
+        </scene>
+        <!--CircleGraphView-->
+        <scene sceneID="pm0-xX-LdG">
+            <objects>
+                <viewController id="ICq-Su-1Wp" customClass="CircleGraphDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="01G-ah-GKD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-EG-qTP">
+                                <rect key="frame" x="57" y="262.5" width="300" height="371.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-mJ-gQZ" customClass="CircleGraphView" customModule="TMShared" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="6Ma-D7-kaC"/>
+                                            <constraint firstAttribute="height" constant="300" id="y95-1y-jPY"/>
+                                        </constraints>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="150" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4S-bR-8xz">
+                                        <rect key="frame" x="-2" y="310" width="304" height="31"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="ICq-Su-1Wp" eventType="valueChanged" id="puv-Rj-SPf"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-A2-nEm">
+                                        <rect key="frame" x="0.0" y="350" width="300" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4YC-EG-qTP" firstAttribute="centerX" secondItem="01G-ah-GKD" secondAttribute="centerX" id="4Fv-GF-igg"/>
+                            <constraint firstItem="4YC-EG-qTP" firstAttribute="centerY" secondItem="01G-ah-GKD" secondAttribute="centerY" id="RUX-Bf-ebw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y7h-bW-Wag"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CircleGraphView" id="Uu3-YQ-qkb"/>
+                    <connections>
+                        <outlet property="circleGraphView" destination="SEG-mJ-gQZ" id="aQ9-Tr-Ae0"/>
+                        <outlet property="labelValue" destination="tgX-A2-nEm" id="J3v-lf-zwV"/>
+                        <outlet property="slider" destination="U4S-bR-8xz" id="VRB-uh-ZeZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OOZ-Kf-5VT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="-650.22321428571422"/>
+        </scene>
+        <!--ImagePanViewController-->
+        <scene sceneID="qMb-sU-zBv">
+            <objects>
+                <viewController id="1mV-gZ-enK" customClass="ImagePanDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M1h-0v-v0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yd5-LS-Hkc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ImagePanViewController" id="cId-u9-ELK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBu-ie-Oka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-650"/>
+        </scene>
+        <!--PopoverFloatPickerViewController-->
+        <scene sceneID="qTr-jP-dWi">
+            <objects>
+                <viewController id="jnE-3W-qxa" customClass="PopoverFloatPickerDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoa-kZ-30E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15T-to-bso">
+                                <rect key="frame" x="134.5" y="412" width="145" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                <state key="normal" title="180.6"/>
+                                <connections>
+                                    <segue destination="RGx-4v-ao9" kind="popoverPresentation" identifier="PopoverFloatPickerViewController" popoverAnchorView="15T-to-bso" id="NAx-4C-CgO">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="15T-to-bso" firstAttribute="centerY" secondItem="hoa-kZ-30E" secondAttribute="centerY" id="bb4-BE-xp5"/>
+                            <constraint firstItem="15T-to-bso" firstAttribute="centerX" secondItem="hoa-kZ-30E" secondAttribute="centerX" id="xxN-jh-WNJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sy9-Oj-esl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PopoverFloatPickerViewController" id="1zg-RJ-ron"/>
+                    <connections>
+                        <outlet property="btnFloat" destination="15T-to-bso" id="di6-ZU-rog"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bv-Js-RXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2811.594202898551" y="924.77678571428567"/>
+        </scene>
+        <!--PopoverFloatPickerViewController-->
+        <scene sceneID="vEY-Mf-WuV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopoverFloatPickerViewController" id="RGx-4v-ao9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ift-mw-dgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3476" y="1010"/>
+        </scene>
+        <!--DotSequenceView-->
+        <scene sceneID="qYj-qD-wQ3">
+            <objects>
+                <viewController id="IRA-f2-GeD" customClass="DotSequenceDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3wo-cK-Rx9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haX-78-V8a" customClass="DotSequenceView" customModule="TMShared" customModuleProvider="target">
+                                <rect key="frame" x="20" y="428" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yve-Wr-IUM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nUL-zW-Sp7" firstAttribute="trailing" secondItem="haX-78-V8a" secondAttribute="trailing" constant="20" id="Sev-67-dKB"/>
+                            <constraint firstItem="haX-78-V8a" firstAttribute="leading" secondItem="nUL-zW-Sp7" secondAttribute="leading" constant="20" id="wqB-4A-yTI"/>
+                            <constraint firstItem="haX-78-V8a" firstAttribute="centerY" secondItem="3wo-cK-Rx9" secondAttribute="centerY" id="z1C-U5-nHK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nUL-zW-Sp7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="DotSequenceView" id="npW-lo-skV"/>
+                    <connections>
+                        <outlet property="dotSequenceView" destination="haX-78-V8a" id="pl7-TH-vM0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j01-Tz-cfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924.6376811594205" y="-650.22321428571422"/>
+        </scene>
+        <!--WaitButton-->
+        <scene sceneID="sbV-P3-aOL">
+            <objects>
+                <viewController id="1DY-7A-9Ho" customClass="WaitButtonDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cNG-92-IR4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="edj-ud-DgP">
+                                <rect key="frame" x="125.5" y="383.5" width="163" height="129"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFJ-Aj-rRP" customClass="WaitButton" customModule="TMShared" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Wait 3 Seconds"/>
+                                        <connections>
+                                            <action selector="waitTextButtonTap:" destination="1DY-7A-9Ho" eventType="touchUpInside" id="CmT-c9-dXc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qm-d4-sbZ" customClass="WaitButton" customModule="TMShared" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49" width="163" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Y2D-5b-Kmc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="waitImageButtonTap:" destination="1DY-7A-9Ho" eventType="touchUpInside" id="Qg9-AO-kc2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="edj-ud-DgP" firstAttribute="centerY" secondItem="cNG-92-IR4" secondAttribute="centerY" id="STZ-x0-fuZ"/>
+                            <constraint firstItem="edj-ud-DgP" firstAttribute="centerX" secondItem="cNG-92-IR4" secondAttribute="centerX" id="tVv-2i-Xuq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KDS-he-JVF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WaitButton" id="OMd-6v-jRe"/>
+                    <connections>
+                        <outlet property="waitImageButton" destination="1qm-d4-sbZ" id="NgC-a7-h28"/>
+                        <outlet property="waitTextButton" destination="VFJ-Aj-rRP" id="sWX-JU-PJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GH0-M8-IdD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="924.77678571428567"/>
+        </scene>
+        <!--PopoverDatePickerViewController-->
+        <scene sceneID="CVf-zx-xpP">
+            <objects>
+                <viewController id="i8b-IP-1rc" customClass="PopoverDatePickerDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vm7-kb-Mgq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Isi-eb-jiA">
+                                <rect key="frame" x="72" y="372" width="270" height="152"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHx-0n-79F">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                        <state key="normal" title="Date"/>
+                                        <connections>
+                                            <segue destination="rts-kU-j2M" kind="popoverPresentation" identifier="PopoverDatePickerViewControllerDate" popoverAnchorView="LHx-0n-79F" id="yiP-re-XTr">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-At-uy9">
+                                        <rect key="frame" x="0.0" y="80" width="270" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                        <state key="normal" title="Date + Time"/>
+                                        <connections>
+                                            <segue destination="rts-kU-j2M" kind="popoverPresentation" identifier="PopoverDatePickerViewControllerDateTime" popoverAnchorView="iDf-At-uy9" id="cW9-dO-sTQ">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Isi-eb-jiA" firstAttribute="centerY" secondItem="vm7-kb-Mgq" secondAttribute="centerY" id="3Oh-x0-3td"/>
+                            <constraint firstItem="Isi-eb-jiA" firstAttribute="centerX" secondItem="vm7-kb-Mgq" secondAttribute="centerX" id="FuB-gf-qhP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eZt-sj-lzT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PopoverDatePickerViewController" id="Dg5-AC-rCP"/>
+                    <connections>
+                        <outlet property="btnDate" destination="LHx-0n-79F" id="IYF-A4-1ZL"/>
+                        <outlet property="btnDateTime" destination="iDf-At-uy9" id="TsG-By-qdK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DPU-dA-EMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3721.739130434783" y="137.94642857142856"/>
+        </scene>
+        <!--PopoverDatePickerViewController-->
+        <scene sceneID="qv3-p8-bTZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopoverDatePickerViewController" id="rts-kU-j2M" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRy-PG-D3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4204" y="-214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="va4-C2-C4e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ohy-29-qdi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="DHm-bL-RC3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zYQ-J2-SeQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb6-dj-2vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cW9-dO-sTQ"/>
+        <segue reference="98p-de-VIS"/>
+    </inferredMetricsTieBreakers>
+</document>

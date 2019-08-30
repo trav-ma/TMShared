@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lre-xC-FJX">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lre-xC-FJX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +11,7 @@
         <!--Modal Number Entry View Controller-->
         <scene sceneID="eIn-E8-ahL">
             <objects>
-                <viewController id="lre-xC-FJX" customClass="ModalNumberEntryViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lre-xC-FJX" customClass="ModalNumberEntryViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="71T-N5-neM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,35 +28,33 @@
                                                 <constraint firstAttribute="height" constant="22" id="TTM-UJ-ZtX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffu-TR-rBY">
-                                            <rect key="frame" x="48.000000000000007" y="738" width="80.666666666666686" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffu-TR-rBY">
+                                            <rect key="frame" x="48" y="738" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="D3u-ky-X33"/>
                                                 <constraint firstAttribute="width" constant="80" id="jgT-sk-bhw"/>
                                             </constraints>
-                                            <state key="normal" title="Dimiss"/>
+                                            <state key="normal" image="xmark" catalog="system"/>
                                             <connections>
                                                 <action selector="btnDismissTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="lLP-HI-4yN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-Mp-yHb">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-Mp-yHb">
                                             <rect key="frame" x="247" y="738" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="GSV-Ko-hfv"/>
                                                 <constraint firstAttribute="width" constant="80" id="YJj-5N-mKc"/>
                                             </constraints>
-                                            <state key="normal" title="Save"/>
+                                            <state key="normal" image="checkmark" catalog="system"/>
                                             <connections>
                                                 <action selector="btnSaveTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="0wq-za-kyh"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$203.45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-kS-e7h">
-                                            <rect key="frame" x="8" y="74" width="359" height="261"/>
+                                            <rect key="frame" x="8" y="74" width="359" height="261.33333333333331"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lcC-yn-LHW">
@@ -70,24 +64,24 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="279" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k96-IV-DLv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="4fL-9q-ApC"/>
                                                                 <constraint firstAttribute="width" constant="60" id="mzA-1g-pe4"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="1"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="wRp-ex-D8G"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-zx-WjH">
-                                                            <rect key="frame" x="110" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="109.66666666666666" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="KkV-9Z-2gl"/>
                                                                 <constraint firstAttribute="height" constant="60" id="QUM-gz-exd"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="2"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="ChX-3M-8Tb"/>
@@ -99,7 +93,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="TOA-1m-P6x"/>
                                                                 <constraint firstAttribute="width" constant="60" id="UXb-hx-hxc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="3"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="mrG-a1-V6J"/>
@@ -108,27 +102,27 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="teT-EH-RIU">
-                                                    <rect key="frame" x="0.0" y="91.666666666666686" width="279" height="60"/>
+                                                    <rect key="frame" x="0.0" y="91.333333333333371" width="279" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z51-xQ-dXQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="hW6-w6-a03"/>
                                                                 <constraint firstAttribute="height" constant="60" id="nIR-PV-ulD"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="4"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="Dq1-VT-OOo"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOQ-1K-Cpa">
-                                                            <rect key="frame" x="110" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="109.66666666666666" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="Ctu-nV-8Lu"/>
                                                                 <constraint firstAttribute="width" constant="60" id="ykS-SA-vBW"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="5"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="07X-F3-1uN"/>
@@ -140,7 +134,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="Ayl-ho-YFL"/>
                                                                 <constraint firstAttribute="width" constant="60" id="sCt-mt-bLL"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="6"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="S4f-09-xhh"/>
@@ -152,24 +146,24 @@
                                                     <rect key="frame" x="0.0" y="183.00000000000006" width="279" height="60"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf4-Ee-ubE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="w8J-SR-cKh"/>
                                                                 <constraint firstAttribute="height" constant="60" id="wLj-u3-2Vd"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="7"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="IIz-3o-f2u"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Z-Ui-AB7">
-                                                            <rect key="frame" x="110" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="109.66666666666666" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="ckZ-Yt-Opk"/>
                                                                 <constraint firstAttribute="height" constant="60" id="xF6-bL-cAf"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="8"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="47K-yr-7Yi"/>
@@ -181,7 +175,7 @@
                                                                 <constraint firstAttribute="height" constant="60" id="Dpe-90-0d3"/>
                                                                 <constraint firstAttribute="width" constant="60" id="nhS-36-y9u"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="9"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="poy-fT-4hG"/>
@@ -192,24 +186,25 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-tc-Lsi">
                                                     <rect key="frame" x="0.0" y="274.66666666666669" width="279" height="60"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-qU-KaB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-qU-KaB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="HLl-y8-jwO"/>
                                                                 <constraint firstAttribute="height" constant="60" id="Sqj-hV-igE"/>
                                                             </constraints>
-                                                            <state key="normal" title="&lt;"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <state key="normal" image="arrowtriangle.left" catalog="system"/>
                                                             <connections>
                                                                 <action selector="btnBackspaceTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="Mea-Of-Wn5"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-Mq-qgE">
-                                                            <rect key="frame" x="110" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="109.66666666666666" y="0.0" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="jEA-EZ-ZMn"/>
                                                                 <constraint firstAttribute="width" constant="60" id="pGK-MY-XXa"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <state key="normal" title="0"/>
                                                             <connections>
                                                                 <action selector="btnNumberTap:" destination="lre-xC-FJX" eventType="touchUpInside" id="S2Y-YL-jYu"/>
@@ -247,7 +242,7 @@
                                         <constraint firstItem="lcC-yn-LHW" firstAttribute="leading" secondItem="S7H-Tw-i9A" secondAttribute="leading" constant="48" id="vVW-bX-teU"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="systemMaterial"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -282,4 +277,9 @@
             <point key="canvasLocation" x="4981.6000000000004" y="2009.8522167487686"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowtriangle.left" catalog="system" width="64" height="58"/>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

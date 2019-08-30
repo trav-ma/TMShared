@@ -9,14 +9,14 @@
 import UIKit
 
 class CircleGraphView: UIView {
-    var circles = [CAShapeLayer]()
+    private var circles = [CAShapeLayer]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
     }
 
-    func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
+    private func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
         return degrees * CGFloat(Double.pi) / 180.0
     }
     

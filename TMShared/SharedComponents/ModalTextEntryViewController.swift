@@ -8,23 +8,6 @@
 
 import UIKit
 
-/* usage
-if segue.identifier == "ModalTextEntryViewController" {
-    if let vc = segue.destination as? ModalTextEntryViewController {
-        vc.color = self.view.tintColor
-        vc.titleFont = labelAvatarTitle.font
-        vc.titleText = "Description/Location"
-        vc.iconDismiss = #imageLiteral(resourceName: "cross-ui")
-        vc.iconSave = #imageLiteral(resourceName: "check-ui")
-        vc.delegate = self
-        if labelDescription.text != kDefaultDescription {
-            vc.initialText = labelDescription.text
-        }
-    }
-    return
-}
-*/
-
 protocol ModalTextEntryViewControllerDelegate {
     func modalTextEntryViewDidChangeText(text: String)
 }
@@ -34,24 +17,24 @@ class ModalTextEntryViewController: UIViewController {
     @IBOutlet weak var btnDismiss: UIButton!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var textViewNote: UITextView!
-    var color: UIColor = .white
+    var colorTint: UIColor = .white
     var titleText: String?
     var titleFont: UIFont?
     var iconDismiss: UIImage?
     var iconSave: UIImage?
-    var initialText : String?
+    var value : String?
     var delegate: ModalTextEntryViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.tintColor = color
-        textViewNote.tintColor = .black
+        view.tintColor = colorTint
+        //textViewNote.tintColor = .black
         textViewNote.layer.borderColor = view.tintColor.cgColor
         textViewNote.layer.borderWidth = 2
         textViewNote.layer.cornerRadius = 12
         textViewNote.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         labelTitle.text = titleText
-        textViewNote.text = initialText
+        textViewNote.text = value
         if let titleFont = titleFont {
             labelTitle.font = titleFont
         }

@@ -42,16 +42,15 @@ class ImagePanScrollBarView: UIView {
 }
 
 class ImagePanViewController: UIViewController {
-
-    var motionManager = CMMotionManager()
-    var displayLink: CADisplayLink?
-    var panningScrollView = UIScrollView()
-    var panningImageView = UIImageView()
-    var scrollBarView = ImagePanScrollBarView()
+    private var motionManager = CMMotionManager()
+    private var displayLink: CADisplayLink?
+    private var panningScrollView = UIScrollView()
+    private var panningImageView = UIImageView()
+    private var scrollBarView = ImagePanScrollBarView()
     var isMotionBasedPanEnabled = true
-    let kMovementSmoothing: TimeInterval = 0.3
-    let kAnimationDuration: TimeInterval = 0.3
-    let kRotationMultiplier: CGFloat = 5
+    private let kMovementSmoothing: TimeInterval = 0.3
+    private let kAnimationDuration: TimeInterval = 0.3
+    private let kRotationMultiplier: CGFloat = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,12 +93,22 @@ class ImagePanViewController: UIViewController {
         motionManager.stopDeviceMotionUpdates()
     }
     
-    func configure(withImage image: UIImage) {
+    func setup(viewController: UIViewController, image: UIImage) {
+        self.willMove(toParent: viewController)
+        viewController.addChild(self)
+        viewController.view.insertSubview(self.view, at: 0)
+        self.view.frame = viewController.view.bounds
+        self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.didMove(toParent: viewController)
+        self.configure(withImage: image)
+    }
+    
+    private func configure(withImage image: UIImage) {
         panningImageView.image = image
         updateScrollViewZoomToMaximumForImage(image: image)
     }
     
-    func calculateRotationBasedOnDeviceMotionRotationRate(motion: CMDeviceMotion) {
+    private func calculateRotationBasedOnDeviceMotionRotationRate(motion: CMDeviceMotion) {
         if isMotionBasedPanEnabled {
             let xRotationRate = motion.rotationRate.x
             let yRotationRate = motion.rotationRate.y
@@ -116,18 +125,18 @@ class ImagePanViewController: UIViewController {
         }
     }
     
-    func maximumZoomScaleForImage(image: UIImage) -> CGFloat {
+    private func maximumZoomScaleForImage(image: UIImage) -> CGFloat {
         return (panningScrollView.bounds.height / panningScrollView.bounds.width) * (image.size.width / image.size.height)
     }
     
-    func clampedContentOffsetForHorizontalOffset(horizontalOffset: CGFloat) -> CGPoint {
+    private func clampedContentOffsetForHorizontalOffset(horizontalOffset: CGFloat) -> CGPoint {
         let maximumXOffset = panningScrollView.contentSize.width - panningScrollView.bounds.width
         let minimumXOffset = 0
         let clampedXOffset = fmaxf(Float(minimumXOffset), Float(fmin(horizontalOffset, maximumXOffset)))
         return CGPoint(x: CGFloat(clampedXOffset), y: panningScrollView.contentOffset.y)
     }
     
-    @objc func displayLinkUpdate() {
+    @objc private func displayLinkUpdate() {
         let panningImageViewPresentationLayer = panningImageView.layer.presentation()!
         let panningScrollViewPresentationLayer = panningScrollView.layer.presentation()!
         let horizontalContentOffset = panningScrollViewPresentationLayer.bounds.origin.x
@@ -139,14 +148,14 @@ class ImagePanViewController: UIViewController {
         scrollBarView.updateWithScrollAmount(scrollAmount: clampedXOffsetAsPercentage, scrollableWidth: scrollBarWidthPercentage, scrollableArea: scrollableAreaPercentage)
     }
     
-    @objc func toggleMotionBasedPan() {
+    @objc private func toggleMotionBasedPan() {
         isMotionBasedPanEnabled = !isMotionBasedPanEnabled
         UIView.animate(withDuration: kAnimationDuration, animations: {
             self.updateViewsForMotionBasedPanEnabled(motionBasedPanEnabled: self.isMotionBasedPanEnabled)
         }, completion:nil)
     }
     
-    func updateViewsForMotionBasedPanEnabled(motionBasedPanEnabled: Bool) {
+    private func updateViewsForMotionBasedPanEnabled(motionBasedPanEnabled: Bool) {
         if motionBasedPanEnabled {
             updateScrollViewZoomToMaximumForImage(image: panningImageView.image!)
             panningScrollView.isScrollEnabled = false
@@ -157,13 +166,13 @@ class ImagePanViewController: UIViewController {
         }
     }
     
-    func updateScrollViewZoomToMaximumForImage(image: UIImage) {
+    private func updateScrollViewZoomToMaximumForImage(image: UIImage) {
         let zoomScale = maximumZoomScaleForImage(image: image)
         panningScrollView.maximumZoomScale = zoomScale
         panningScrollView.zoomScale = zoomScale
     }
     
-    @objc func pinchGestureRecognized() {
+    @objc private func pinchGestureRecognized() {
         isMotionBasedPanEnabled = false
         panningScrollView.isScrollEnabled = true
     }

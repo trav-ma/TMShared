@@ -9,14 +9,14 @@
 import UIKit
 
 class SpiralGraphView: UIView {
-    fileprivate var circles = [CAShapeLayer]()
-    fileprivate var baseLayer: CAShapeLayer?
-    fileprivate var drawAnimation: CABasicAnimation = {
+    private var circles = [CAShapeLayer]()
+    private var baseLayer: CAShapeLayer?
+    private var drawAnimation: CABasicAnimation = {
         let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
         drawAnimation.fromValue = 0.0
         drawAnimation.toValue = 1.0
         drawAnimation.duration = 1.0
-        drawAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        drawAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         return drawAnimation
     }()
     
@@ -25,11 +25,11 @@ class SpiralGraphView: UIView {
         self.backgroundColor = UIColor.clear
     }
     
-    fileprivate func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
+    private func degreesToRadians(_ degrees: CGFloat) -> CGFloat {
         return degrees * CGFloat(Double.pi) / 180.0
     }
     
-    fileprivate func drawCircleLayer(degree: CGFloat, radius: CGFloat, color: UIColor, thickness: CGFloat, shouldAnimate: Bool = true) -> CAShapeLayer {
+    private func drawCircleLayer(degree: CGFloat, radius: CGFloat, color: UIColor, thickness: CGFloat, shouldAnimate: Bool = true) -> CAShapeLayer {
         let circle = CAShapeLayer()
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         circle.path = UIBezierPath(arcCenter: center,
@@ -38,7 +38,7 @@ class SpiralGraphView: UIView {
                                    endAngle: degreesToRadians(degree - 90),
                                    clockwise: true).cgPath
         circle.fillColor = UIColor.clear.cgColor
-        circle.lineCap = kCALineCapRound
+        circle.lineCap = CAShapeLayerLineCap.round
         circle.strokeColor = color.cgColor
         circle.lineWidth = thickness
         self.layer.addSublayer(circle)
@@ -61,7 +61,7 @@ class SpiralGraphView: UIView {
         var radius: CGFloat = max(bounds.width, bounds.height)
         //draw base layer
         if baseLayer == nil {
-            let baseColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+            let baseColor = UIColor.systemGray6
             let baseThickness = thickness * CGFloat(percents.count)
             let baseRadius = (radius / 2) - (baseThickness / 2)
             baseLayer = drawCircleLayer(degree: 360,
@@ -74,7 +74,7 @@ class SpiralGraphView: UIView {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
             [unowned self] in
             for index in 0 ..< degrees.count {
-                var strokeColor = UIColor.lightGray
+                var strokeColor = UIColor.systemFill
                 if index < colors.count {
                     strokeColor = colors[index]
                 }

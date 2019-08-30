@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C13C81A2314E0DE00BE52AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C8192314E0DE00BE52AB /* AppDelegate.swift */; };
+		1C13C81C2314E0DE00BE52AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C81B2314E0DE00BE52AB /* SceneDelegate.swift */; };
+		1C13C81E2314E0DE00BE52AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C81D2314E0DE00BE52AB /* ViewController.swift */; };
+		1C13C8212314E0DE00BE52AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C81F2314E0DE00BE52AB /* Main.storyboard */; };
+		1C13C8232314E0DF00BE52AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8222314E0DF00BE52AB /* Assets.xcassets */; };
+		1C13C8262314E0DF00BE52AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8242314E0DF00BE52AB /* LaunchScreen.storyboard */; };
+		1C5A8FF82314E1790002990B /* SpiralGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */; };
+		1C5A8FF92314E1790002990B /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */; };
+		1C5A8FFB2314E1790002990B /* ModalTextEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */; };
+		1C5A8FFC2314E1790002990B /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE32314E1780002990B /* CircleGraphView.swift */; };
+		1C5A8FFD2314E1790002990B /* ImagePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE42314E1780002990B /* ImagePanViewController.swift */; };
+		1C5A8FFE2314E1790002990B /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE52314E1780002990B /* StreamReader.swift */; };
+		1C5A90002314E1790002990B /* PopoverDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE72314E1780002990B /* PopoverDatePickerViewController.swift */; };
+		1C5A90012314E1790002990B /* PopoverDatePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE82314E1780002990B /* PopoverDatePickerViewController.storyboard */; };
+		1C5A90022314E1790002990B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE92314E1780002990B /* Utility.swift */; };
+		1C5A90032314E1790002990B /* AnimatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FEA2314E1780002990B /* AnimatedLabel.swift */; };
+		1C5A90042314E1790002990B /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FEB2314E1780002990B /* StoryboardHelper.swift */; };
+		1C5A90062314E1790002990B /* NSManagedObject+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FED2314E1780002990B /* NSManagedObject+CloudKit.swift */; };
+		1C5A90082314E1790002990B /* PopoverFloatPickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A8FEF2314E1780002990B /* PopoverFloatPickerViewController.storyboard */; };
+		1C5A90092314E1790002990B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF02314E1780002990B /* Date+Extensions.swift */; };
+		1C5A900A2314E1790002990B /* ModalTextEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF12314E1780002990B /* ModalTextEntryViewController.storyboard */; };
+		1C5A900B2314E1790002990B /* PopoverFloatPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF22314E1780002990B /* PopoverFloatPickerViewController.swift */; };
+		1C5A900C2314E1790002990B /* WaitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF32314E1780002990B /* WaitButton.swift */; };
+		1C5A900D2314E1790002990B /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF42314E1780002990B /* CoreDataHelpers.swift */; };
+		1C5A900E2314E1790002990B /* ModalNumberEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF52314E1780002990B /* ModalNumberEntryViewController.storyboard */; };
+		1C5A900F2314E1790002990B /* ModalNumberEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF62314E1790002990B /* ModalNumberEntryViewController.swift */; };
+		1C5A90102314E1790002990B /* DotSequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FF72314E1790002990B /* DotSequenceView.swift */; };
+		1C80C0DF2314E5E000DF8D6C /* AnimatedLabelDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0DE2314E5E000DF8D6C /* AnimatedLabelDemoViewController.swift */; };
+		1C80C0E12314E5F300DF8D6C /* CircleGraphDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0E02314E5F300DF8D6C /* CircleGraphDemoViewController.swift */; };
+		1C80C0E32314E60600DF8D6C /* DotSequenceDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0E22314E60600DF8D6C /* DotSequenceDemoViewController.swift */; };
+		1C80C0E52314E61500DF8D6C /* ImagePanDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0E42314E61500DF8D6C /* ImagePanDemoViewController.swift */; };
+		1C80C0E72314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0E62314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift */; };
+		1C80C0E92314E64700DF8D6C /* ModalTextEntryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0E82314E64700DF8D6C /* ModalTextEntryDemoViewController.swift */; };
+		1C80C0EB2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0EA2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift */; };
+		1C80C0ED2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0EC2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift */; };
+		1C80C0EF2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0EE2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift */; };
+		1C80C0F12314E6B400DF8D6C /* StreamReaderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F02314E6B400DF8D6C /* StreamReaderDemoViewController.swift */; };
+		1C80C0F32314E6C400DF8D6C /* WaitButtonDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */; };
+		1C80C0F52314E78C00DF8D6C /* TimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F42314E78C00DF8D6C /* TimeStamps.swift */; };
+		1C80C0F72314EC2800DF8D6C /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F62314EC2800DF8D6C /* UIKitHelpers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C13C8162314E0DE00BE52AB /* TMShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C13C8192314E0DE00BE52AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C13C81B2314E0DE00BE52AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1C13C81D2314E0DE00BE52AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C13C8202314E0DE00BE52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C13C8222314E0DF00BE52AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C13C8252314E0DF00BE52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C13C8272314E0DF00BE52AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiralGraphView.swift; sourceTree = "<group>"; };
+		1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelpers.swift; sourceTree = "<group>"; };
+		1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextEntryViewController.swift; sourceTree = "<group>"; };
+		1C5A8FE32314E1780002990B /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
+		1C5A8FE42314E1780002990B /* ImagePanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePanViewController.swift; sourceTree = "<group>"; };
+		1C5A8FE52314E1780002990B /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		1C5A8FE72314E1780002990B /* PopoverDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverDatePickerViewController.swift; sourceTree = "<group>"; };
+		1C5A8FE82314E1780002990B /* PopoverDatePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverDatePickerViewController.storyboard; sourceTree = "<group>"; };
+		1C5A8FE92314E1780002990B /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		1C5A8FEA2314E1780002990B /* AnimatedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedLabel.swift; sourceTree = "<group>"; };
+		1C5A8FEB2314E1780002990B /* StoryboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
+		1C5A8FED2314E1780002990B /* NSManagedObject+CloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+CloudKit.swift"; sourceTree = "<group>"; };
+		1C5A8FEF2314E1780002990B /* PopoverFloatPickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverFloatPickerViewController.storyboard; sourceTree = "<group>"; };
+		1C5A8FF02314E1780002990B /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		1C5A8FF12314E1780002990B /* ModalTextEntryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModalTextEntryViewController.storyboard; sourceTree = "<group>"; };
+		1C5A8FF22314E1780002990B /* PopoverFloatPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverFloatPickerViewController.swift; sourceTree = "<group>"; };
+		1C5A8FF32314E1780002990B /* WaitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitButton.swift; sourceTree = "<group>"; };
+		1C5A8FF42314E1780002990B /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		1C5A8FF52314E1780002990B /* ModalNumberEntryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModalNumberEntryViewController.storyboard; sourceTree = "<group>"; };
+		1C5A8FF62314E1790002990B /* ModalNumberEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalNumberEntryViewController.swift; sourceTree = "<group>"; };
+		1C5A8FF72314E1790002990B /* DotSequenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotSequenceView.swift; sourceTree = "<group>"; };
+		1C80C0DE2314E5E000DF8D6C /* AnimatedLabelDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLabelDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0E02314E5F300DF8D6C /* CircleGraphDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGraphDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0E22314E60600DF8D6C /* DotSequenceDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotSequenceDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0E42314E61500DF8D6C /* ImagePanDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePanDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0E62314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNumberEntryDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0E82314E64700DF8D6C /* ModalTextEntryDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTextEntryDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0EA2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverDatePickerDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0EC2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverFloatPickerDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0EE2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralGraphDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0F02314E6B400DF8D6C /* StreamReaderDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReaderDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitButtonDemoViewController.swift; sourceTree = "<group>"; };
+		1C80C0F42314E78C00DF8D6C /* TimeStamps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamps.swift; sourceTree = "<group>"; };
+		1C80C0F62314EC2800DF8D6C /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C13C8132314E0DE00BE52AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C13C80D2314E0DE00BE52AB = {
+			isa = PBXGroup;
+			children = (
+				1C13C8182314E0DE00BE52AB /* TMShared */,
+				1C13C8172314E0DE00BE52AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C13C8172314E0DE00BE52AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C13C8162314E0DE00BE52AB /* TMShared.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C13C8182314E0DE00BE52AB /* TMShared */ = {
+			isa = PBXGroup;
+			children = (
+				1C5A90142314E3D60002990B /* SharedUtilities */,
+				1C5A8FDE2314E13E0002990B /* SharedComponents */,
+				1C13C8192314E0DE00BE52AB /* AppDelegate.swift */,
+				1C13C81B2314E0DE00BE52AB /* SceneDelegate.swift */,
+				1C13C81D2314E0DE00BE52AB /* ViewController.swift */,
+				1C13C81F2314E0DE00BE52AB /* Main.storyboard */,
+				1C13C8222314E0DF00BE52AB /* Assets.xcassets */,
+				1C13C8242314E0DF00BE52AB /* LaunchScreen.storyboard */,
+				1C13C8272314E0DF00BE52AB /* Info.plist */,
+				1C80C0DE2314E5E000DF8D6C /* AnimatedLabelDemoViewController.swift */,
+				1C80C0E02314E5F300DF8D6C /* CircleGraphDemoViewController.swift */,
+				1C80C0E22314E60600DF8D6C /* DotSequenceDemoViewController.swift */,
+				1C80C0E42314E61500DF8D6C /* ImagePanDemoViewController.swift */,
+				1C80C0E62314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift */,
+				1C80C0E82314E64700DF8D6C /* ModalTextEntryDemoViewController.swift */,
+				1C80C0EA2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift */,
+				1C80C0EC2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift */,
+				1C80C0EE2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift */,
+				1C80C0F02314E6B400DF8D6C /* StreamReaderDemoViewController.swift */,
+				1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */,
+			);
+			path = TMShared;
+			sourceTree = "<group>";
+		};
+		1C5A8FDE2314E13E0002990B /* SharedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1C5A8FEA2314E1780002990B /* AnimatedLabel.swift */,
+				1C5A8FE32314E1780002990B /* CircleGraphView.swift */,
+				1C5A8FF72314E1790002990B /* DotSequenceView.swift */,
+				1C5A8FE42314E1780002990B /* ImagePanViewController.swift */,
+				1C5A8FF52314E1780002990B /* ModalNumberEntryViewController.storyboard */,
+				1C5A8FF62314E1790002990B /* ModalNumberEntryViewController.swift */,
+				1C5A8FF12314E1780002990B /* ModalTextEntryViewController.storyboard */,
+				1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */,
+				1C5A8FE82314E1780002990B /* PopoverDatePickerViewController.storyboard */,
+				1C5A8FE72314E1780002990B /* PopoverDatePickerViewController.swift */,
+				1C5A8FEF2314E1780002990B /* PopoverFloatPickerViewController.storyboard */,
+				1C5A8FF22314E1780002990B /* PopoverFloatPickerViewController.swift */,
+				1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */,
+				1C5A8FF32314E1780002990B /* WaitButton.swift */,
+			);
+			path = SharedComponents;
+			sourceTree = "<group>";
+		};
+		1C5A90142314E3D60002990B /* SharedUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				1C5A8FED2314E1780002990B /* NSManagedObject+CloudKit.swift */,
+				1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */,
+				1C5A8FF42314E1780002990B /* CoreDataHelpers.swift */,
+				1C5A8FEB2314E1780002990B /* StoryboardHelper.swift */,
+				1C80C0F62314EC2800DF8D6C /* UIKitHelpers.swift */,
+				1C80C0F42314E78C00DF8D6C /* TimeStamps.swift */,
+				1C5A8FF02314E1780002990B /* Date+Extensions.swift */,
+				1C5A8FE52314E1780002990B /* StreamReader.swift */,
+				1C5A8FE92314E1780002990B /* Utility.swift */,
+			);
+			path = SharedUtilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C13C8152314E0DE00BE52AB /* TMShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C13C82A2314E0DF00BE52AB /* Build configuration list for PBXNativeTarget "TMShared" */;
+			buildPhases = (
+				1C13C8122314E0DE00BE52AB /* Sources */,
+				1C13C8132314E0DE00BE52AB /* Frameworks */,
+				1C13C8142314E0DE00BE52AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TMShared;
+			productName = TMShared;
+			productReference = 1C13C8162314E0DE00BE52AB /* TMShared.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C13C80E2314E0DE00BE52AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Travis Ma";
+				TargetAttributes = {
+					1C13C8152314E0DE00BE52AB = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 1C13C8112314E0DE00BE52AB /* Build configuration list for PBXProject "TMShared" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C13C80D2314E0DE00BE52AB;
+			productRefGroup = 1C13C8172314E0DE00BE52AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C13C8152314E0DE00BE52AB /* TMShared */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C13C8142314E0DE00BE52AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C13C8262314E0DF00BE52AB /* LaunchScreen.storyboard in Resources */,
+				1C13C8232314E0DF00BE52AB /* Assets.xcassets in Resources */,
+				1C5A90082314E1790002990B /* PopoverFloatPickerViewController.storyboard in Resources */,
+				1C5A900A2314E1790002990B /* ModalTextEntryViewController.storyboard in Resources */,
+				1C5A900E2314E1790002990B /* ModalNumberEntryViewController.storyboard in Resources */,
+				1C13C8212314E0DE00BE52AB /* Main.storyboard in Resources */,
+				1C5A90012314E1790002990B /* PopoverDatePickerViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C13C8122314E0DE00BE52AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C80C0E32314E60600DF8D6C /* DotSequenceDemoViewController.swift in Sources */,
+				1C5A8FFE2314E1790002990B /* StreamReader.swift in Sources */,
+				1C80C0E52314E61500DF8D6C /* ImagePanDemoViewController.swift in Sources */,
+				1C5A8FF82314E1790002990B /* SpiralGraphView.swift in Sources */,
+				1C5A900C2314E1790002990B /* WaitButton.swift in Sources */,
+				1C5A8FFD2314E1790002990B /* ImagePanViewController.swift in Sources */,
+				1C5A90042314E1790002990B /* StoryboardHelper.swift in Sources */,
+				1C5A900F2314E1790002990B /* ModalNumberEntryViewController.swift in Sources */,
+				1C5A8FFB2314E1790002990B /* ModalTextEntryViewController.swift in Sources */,
+				1C80C0E92314E64700DF8D6C /* ModalTextEntryDemoViewController.swift in Sources */,
+				1C5A900D2314E1790002990B /* CoreDataHelpers.swift in Sources */,
+				1C80C0E12314E5F300DF8D6C /* CircleGraphDemoViewController.swift in Sources */,
+				1C80C0EF2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift in Sources */,
+				1C80C0DF2314E5E000DF8D6C /* AnimatedLabelDemoViewController.swift in Sources */,
+				1C80C0F12314E6B400DF8D6C /* StreamReaderDemoViewController.swift in Sources */,
+				1C13C81E2314E0DE00BE52AB /* ViewController.swift in Sources */,
+				1C5A8FF92314E1790002990B /* CloudKitHelpers.swift in Sources */,
+				1C80C0F72314EC2800DF8D6C /* UIKitHelpers.swift in Sources */,
+				1C80C0F32314E6C400DF8D6C /* WaitButtonDemoViewController.swift in Sources */,
+				1C80C0F52314E78C00DF8D6C /* TimeStamps.swift in Sources */,
+				1C5A90092314E1790002990B /* Date+Extensions.swift in Sources */,
+				1C80C0ED2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift in Sources */,
+				1C5A90032314E1790002990B /* AnimatedLabel.swift in Sources */,
+				1C5A90022314E1790002990B /* Utility.swift in Sources */,
+				1C13C81A2314E0DE00BE52AB /* AppDelegate.swift in Sources */,
+				1C13C81C2314E0DE00BE52AB /* SceneDelegate.swift in Sources */,
+				1C5A90002314E1790002990B /* PopoverDatePickerViewController.swift in Sources */,
+				1C80C0E72314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift in Sources */,
+				1C5A90102314E1790002990B /* DotSequenceView.swift in Sources */,
+				1C5A8FFC2314E1790002990B /* CircleGraphView.swift in Sources */,
+				1C5A90062314E1790002990B /* NSManagedObject+CloudKit.swift in Sources */,
+				1C80C0EB2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift in Sources */,
+				1C5A900B2314E1790002990B /* PopoverFloatPickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1C13C81F2314E0DE00BE52AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C13C8202314E0DE00BE52AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1C13C8242314E0DF00BE52AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C13C8252314E0DF00BE52AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C13C8282314E0DF00BE52AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1C13C8292314E0DF00BE52AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C13C82B2314E0DF00BE52AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 457YD3ZJ66;
+				INFOPLIST_FILE = TMShared/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.travisma.TMShared;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1C13C82C2314E0DF00BE52AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 457YD3ZJ66;
+				INFOPLIST_FILE = TMShared/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.travisma.TMShared;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C13C8112314E0DE00BE52AB /* Build configuration list for PBXProject "TMShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C13C8282314E0DF00BE52AB /* Debug */,
+				1C13C8292314E0DF00BE52AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C13C82A2314E0DF00BE52AB /* Build configuration list for PBXNativeTarget "TMShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C13C82B2314E0DF00BE52AB /* Debug */,
+				1C13C82C2314E0DF00BE52AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C13C80E2314E0DE00BE52AB /* Project object */;
+}

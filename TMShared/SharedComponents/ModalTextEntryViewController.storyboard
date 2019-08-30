@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +10,7 @@
         <!--Modal Text Entry View Controller-->
         <scene sceneID="RDt-LR-HTi">
             <objects>
-                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ro-bk-zy3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,12 +22,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="px6-rt-pgq">
-                                            <rect key="frame" x="48" y="74" width="279" height="200"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="48" y="74" width="279" height="300"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="f67-qN-X1e"/>
+                                                <constraint firstAttribute="height" constant="300" id="f67-qN-X1e"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-wf-5lp">
@@ -39,27 +37,26 @@
                                                 <constraint firstAttribute="height" constant="22" id="Xw2-j3-tUv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
-                                            <rect key="frame" x="48" y="282" width="80" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
+                                            <rect key="frame" x="48" y="382" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="4YO-ca-A77"/>
                                                 <constraint firstAttribute="height" constant="40" id="gmr-df-Lk4"/>
                                             </constraints>
-                                            <state key="normal" title="Dimiss"/>
+                                            <state key="normal" image="xmark" catalog="system"/>
                                             <connections>
                                                 <action selector="btnDismissTap:" destination="Mtn-RQ-vee" eventType="touchUpInside" id="gVY-Vh-aAE"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
-                                            <rect key="frame" x="247" y="282" width="80" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
+                                            <rect key="frame" x="247" y="382" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="69h-1M-I7D"/>
                                                 <constraint firstAttribute="height" constant="40" id="P4C-2U-NIE"/>
                                             </constraints>
-                                            <state key="normal" title="Save"/>
+                                            <state key="normal" image="checkmark" catalog="system"/>
                                             <connections>
                                                 <action selector="btnSaveTap:" destination="Mtn-RQ-vee" eventType="touchUpInside" id="WeG-oW-XaC"/>
                                             </connections>
@@ -78,7 +75,7 @@
                                         <constraint firstAttribute="trailing" secondItem="WI7-wf-5lp" secondAttribute="trailing" constant="8" id="wBJ-Cz-Z5O"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="systemMaterial"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,4 +99,8 @@
             <point key="canvasLocation" x="884" y="-175.1231527093596"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

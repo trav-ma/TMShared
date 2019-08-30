@@ -9,8 +9,8 @@
 import UIKit
 
 class DotSequenceView: UIView {
-    var line: UIView?
-    var circles = [UIView]()
+    private var line: UIView?
+    private var circles = [UIView]()
     
     override func awakeFromNib() {
         super.awakeFromNib()

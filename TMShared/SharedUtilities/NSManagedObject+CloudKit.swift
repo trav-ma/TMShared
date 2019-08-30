@@ -6,7 +6,7 @@
 //  Copyright © 2019 Travis Ma. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
 import CloudKit
 

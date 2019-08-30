@@ -8,26 +8,6 @@
 
 import UIKit
 
-/* usage
-if segue.identifier == "ModalNumberEntryViewController" {
-    if let vc = segue.destination as? ModalNumberEntryViewController {
-        vc.color = self.view.tintColor
-        vc.titleFont = labelAvatarTitle.font
-        vc.titleText = "Amount"
-        vc.iconDismiss = #imageLiteral(resourceName: "cross-ui")
-        vc.iconSave = #imageLiteral(resourceName: "check-ui")
-        vc.iconBackspace = #imageLiteral(resourceName: "chevron-left")
-        vc.delegate = self
-        vc.precision = 2
-        vc.symbol = "$"
-        if labelDescription.text != "0" {
-            vc.value = Double(selectedAmount)
-        }
-    }
-    return
-}
-*/
-
 protocol ModalNumberEntryViewControllerDelegate {
     func modalNumberEntryViewDidChange(value: Double)
 }
@@ -56,7 +36,7 @@ class ModalNumberEntryViewController: UIViewController {
     @IBOutlet weak var btn9: UIButton!
     @IBOutlet weak var btn0: UIButton!
     @IBOutlet weak var btnBackspace: UIButton!
-    var color: UIColor = .white
+    var colorTint: UIColor = .white
     var titleText: String?
     var titleFont: UIFont?
     var iconDismiss: UIImage?
@@ -65,17 +45,18 @@ class ModalNumberEntryViewController: UIViewController {
     var value: Double = 0
     var precision: Int = 0
     var delegate: ModalNumberEntryViewControllerDelegate?
-    var buttons = [UIButton]()
-    var numberFormatter = NumberFormatter()
-    var symbol = ""
+    private var buttons = [UIButton]()
+    private var numberFormatter = NumberFormatter()
+    var isCurrency = false
+    var showCommas = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.tintColor = color
-        numberFormatter.numberStyle = .currency
+        view.tintColor = colorTint
+        numberFormatter.numberStyle = isCurrency ? .currency : .decimal
+        numberFormatter.usesGroupingSeparator = showCommas
         numberFormatter.minimumFractionDigits = precision
         numberFormatter.maximumFractionDigits = precision
-        numberFormatter.currencySymbol = symbol
         labelTitle.text = titleText
         labelAmount.text = numberFormatter.string(from: NSNumber(value: value))
         if let titleFont = titleFont {
@@ -112,11 +93,11 @@ class ModalNumberEntryViewController: UIViewController {
         }
     }
     
-    func stringValue() -> String {
+    private func stringValue() -> String {
         return String(format: "%.\(precision)f", value).replacingOccurrences(of: ".", with: "")
     }
     
-    func updateAmount(val: String) {
+    private func updateAmount(val: String) {
         var string = val
         if precision > 0 { //reinsert decimal
             string = string.leftPadding(toLength: precision + 1, withPad: "0")
