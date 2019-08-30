@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qEX-hZ-H0A">
-                                <rect key="frame" x="90" y="271" width="234" height="354"/>
+                                <rect key="frame" x="90" y="253" width="234" height="390"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-h0-3rw">
                                         <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
@@ -86,6 +87,13 @@
                                         <state key="normal" title="WaitButton"/>
                                         <connections>
                                             <segue destination="1DY-7A-9Ho" kind="show" id="tfO-Fy-mwH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIc-jB-evR">
+                                        <rect key="frame" x="0.0" y="360" width="234" height="30"/>
+                                        <state key="normal" title="Up Image Carousel"/>
+                                        <connections>
+                                            <segue destination="iwg-z0-Whf" kind="show" id="2Ph-yQ-br9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -449,6 +457,71 @@
             </objects>
             <point key="canvasLocation" x="1924.6376811594205" y="-650.22321428571422"/>
         </scene>
+        <!--Up Image Carousel-->
+        <scene sceneID="237-uM-scR">
+            <objects>
+                <viewController id="iwg-z0-Whf" customClass="UpImageCarouselDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pmM-5n-XY7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-40-ime">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wfz-98-8zh">
+                                    <size key="itemSize" width="300" height="500"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="sWz-Gm-sIZ" customClass="PhotoCollectionViewCell" customModule="TMShared" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="0.0" width="300" height="500"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uva-1N-4QP">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempPic" translatesAutoresizingMaskIntoConstraints="NO" id="GGR-Tl-N95">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GGR-Tl-N95" firstAttribute="top" secondItem="uva-1N-4QP" secondAttribute="top" id="5uf-hl-50O"/>
+                                                <constraint firstAttribute="bottom" secondItem="GGR-Tl-N95" secondAttribute="bottom" id="BCa-z2-5bZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="GGR-Tl-N95" secondAttribute="trailing" id="nPg-1t-ij0"/>
+                                                <constraint firstItem="GGR-Tl-N95" firstAttribute="leading" secondItem="uva-1N-4QP" secondAttribute="leading" id="vlN-0h-0XU"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="GGR-Tl-N95" id="C19-Za-lBv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="iwg-z0-Whf" id="CRl-AU-zzB"/>
+                                    <outlet property="delegate" destination="iwg-z0-Whf" id="noX-4q-sLC"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SKu-40-ime" secondAttribute="bottom" id="2k8-PP-JaS"/>
+                            <constraint firstItem="SKu-40-ime" firstAttribute="top" secondItem="8K5-hW-OIK" secondAttribute="top" id="98m-NP-pwU"/>
+                            <constraint firstItem="SKu-40-ime" firstAttribute="leading" secondItem="8K5-hW-OIK" secondAttribute="leading" id="Zf3-Hr-dgq"/>
+                            <constraint firstItem="SKu-40-ime" firstAttribute="trailing" secondItem="8K5-hW-OIK" secondAttribute="trailing" id="mpC-tH-rmB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8K5-hW-OIK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Up Image Carousel" id="FTb-25-qb9"/>
+                    <connections>
+                        <outlet property="collectionView" destination="SKu-40-ime" id="x3q-gn-IsF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nD0-2W-5tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="924.77678571428567"/>
+        </scene>
         <!--WaitButton-->
         <scene sceneID="sbV-P3-aOL">
             <objects>
@@ -580,6 +653,7 @@
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="64" height="62"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <image name="tempPic" width="1080" height="1349"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cW9-dO-sTQ"/>

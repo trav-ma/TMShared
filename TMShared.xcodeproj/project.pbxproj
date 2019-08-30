@@ -13,6 +13,7 @@
 		1C13C8212314E0DE00BE52AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C81F2314E0DE00BE52AB /* Main.storyboard */; };
 		1C13C8232314E0DF00BE52AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8222314E0DF00BE52AB /* Assets.xcassets */; };
 		1C13C8262314E0DF00BE52AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8242314E0DF00BE52AB /* LaunchScreen.storyboard */; };
+		1C4955502319CE8400E3F281 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49554F2319CE8400E3F281 /* UPCarouselFlowLayout.swift */; };
 		1C5A8FF82314E1790002990B /* SpiralGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */; };
 		1C5A8FF92314E1790002990B /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */; };
 		1C5A8FFB2314E1790002990B /* ModalTextEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */; };
@@ -47,6 +48,7 @@
 		1C80C0F32314E6C400DF8D6C /* WaitButtonDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */; };
 		1C80C0F52314E78C00DF8D6C /* TimeStamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F42314E78C00DF8D6C /* TimeStamps.swift */; };
 		1C80C0F72314EC2800DF8D6C /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80C0F62314EC2800DF8D6C /* UIKitHelpers.swift */; };
+		1CCA41782319CEE10049DC95 /* UpImageCarouselDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA41772319CEE10049DC95 /* UpImageCarouselDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,7 @@
 		1C13C8222314E0DF00BE52AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C13C8252314E0DF00BE52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C13C8272314E0DF00BE52AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C49554F2319CE8400E3F281 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiralGraphView.swift; sourceTree = "<group>"; };
 		1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelpers.swift; sourceTree = "<group>"; };
 		1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextEntryViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitButtonDemoViewController.swift; sourceTree = "<group>"; };
 		1C80C0F42314E78C00DF8D6C /* TimeStamps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamps.swift; sourceTree = "<group>"; };
 		1C80C0F62314EC2800DF8D6C /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
+		1CCA41772319CEE10049DC95 /* UpImageCarouselDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpImageCarouselDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				1C80C0EE2314E69B00DF8D6C /* SpiralGraphDemoViewController.swift */,
 				1C80C0F02314E6B400DF8D6C /* StreamReaderDemoViewController.swift */,
 				1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */,
+				1CCA41772319CEE10049DC95 /* UpImageCarouselDemoViewController.swift */,
 			);
 			path = TMShared;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 		1C5A8FDE2314E13E0002990B /* SharedComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1C49554F2319CE8400E3F281 /* UPCarouselFlowLayout.swift */,
 				1C5A8FEA2314E1780002990B /* AnimatedLabel.swift */,
 				1C5A8FE32314E1780002990B /* CircleGraphView.swift */,
 				1C5A8FF72314E1790002990B /* DotSequenceView.swift */,
@@ -283,11 +289,13 @@
 				1C5A90092314E1790002990B /* Date+Extensions.swift in Sources */,
 				1C80C0ED2314E68800DF8D6C /* PopoverFloatPickerDemoViewController.swift in Sources */,
 				1C5A90032314E1790002990B /* AnimatedLabel.swift in Sources */,
+				1CCA41782319CEE10049DC95 /* UpImageCarouselDemoViewController.swift in Sources */,
 				1C5A90022314E1790002990B /* Utility.swift in Sources */,
 				1C13C81A2314E0DE00BE52AB /* AppDelegate.swift in Sources */,
 				1C13C81C2314E0DE00BE52AB /* SceneDelegate.swift in Sources */,
 				1C5A90002314E1790002990B /* PopoverDatePickerViewController.swift in Sources */,
 				1C80C0E72314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift in Sources */,
+				1C4955502319CE8400E3F281 /* UPCarouselFlowLayout.swift in Sources */,
 				1C5A90102314E1790002990B /* DotSequenceView.swift in Sources */,
 				1C5A8FFC2314E1790002990B /* CircleGraphView.swift in Sources */,
 				1C5A90062314E1790002990B /* NSManagedObject+CloudKit.swift in Sources */,
