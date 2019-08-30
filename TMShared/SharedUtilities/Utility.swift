@@ -11,12 +11,10 @@ import Foundation
 let imagesPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/images/"
 
 func formatCurrency(_ number: NSNumber?) -> String {
-    guard let number = number else {
-        return "$0.00"
-    }
+    let num = number ?? NSNumber(value: 0)
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
-    return formatter.string(from: number) ?? "$0.00"
+    return formatter.string(from: num)!
 }
 
 func formatPhone(_ phone: String?) -> String {
@@ -34,21 +32,17 @@ func formatPhone(_ phone: String?) -> String {
 }
 
 func formatCurrency(_ number: Float?) -> String {
-    guard let number = number else {
-        return "$0.00"
-    }
+    let num = number ?? 0
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
-    return formatter.string(from: number as NSNumber) ?? "$0.00"
+    return formatter.string(from: num as NSNumber)!
 }
 
 func formatCurrency(_ number: Double?) -> String {
-    guard let number = number else {
-        return "$0.00"
-    }
+    let num = number ?? 0
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
-    return formatter.string(from: number as NSNumber) ?? "$0.00"
+    return formatter.string(from: num as NSNumber)!
 }
 
 func addCommas(_ int: Int) -> String {
