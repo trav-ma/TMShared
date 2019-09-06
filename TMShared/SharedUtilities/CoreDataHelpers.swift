@@ -9,9 +9,11 @@
 import Foundation
 import CoreData
 
+var databaseName: String?
+
 let databaseContainer: NSPersistentContainer = {
     print(NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last! as String)
-    let container = NSPersistentContainer(name: "Model")
+    let container = NSPersistentContainer(name: databaseName ?? "Model")
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
         if let error = error {
             fatalError("Unresolved error \(error)")
@@ -56,10 +58,12 @@ extension NSManagedObjectContext {
     ///
     /// - Parameter batchDeleteRequest: The `NSBatchDeleteRequest` to execute.
     /// - Throws: An error if anything went wrong executing the batch deletion.
-    
-//    let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
-//    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//    try? dbContext.executeAndMergeChanges(using: batchDeleteRequest)
+//    dbContext.performAndWait {
+//        let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
+//        fetchRequest.predicate = NSPredicate(format: "date < %@", NSDate())  //to delete all, use no predictae
+//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//        try? dbContext.executeAndMergeChanges(using: batchDeleteRequest)
+//    }
     
     public func executeAndMergeChanges(using batchDeleteRequest: NSBatchDeleteRequest) throws {
         batchDeleteRequest.resultType = .resultTypeObjectIDs
