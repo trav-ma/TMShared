@@ -34,6 +34,11 @@ extension Date {
         return 0
     }
     
+    func relativeDate() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
+    
     func dates(untilDate: Date) -> [Date] {
         var dates: [Date] = []
         var date = self
