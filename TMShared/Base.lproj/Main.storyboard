@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qEX-hZ-H0A">
-                                <rect key="frame" x="90" y="253" width="234" height="390"/>
+                                <rect key="frame" x="90" y="235" width="234" height="426"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-h0-3rw">
                                         <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
@@ -94,6 +94,13 @@
                                         <state key="normal" title="Up Image Carousel"/>
                                         <connections>
                                             <segue destination="iwg-z0-Whf" kind="show" id="2Ph-yQ-br9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UV-AO-ruT">
+                                        <rect key="frame" x="0.0" y="396" width="234" height="30"/>
+                                        <state key="normal" title="Left Edge Sliding Picker"/>
+                                        <connections>
+                                            <segue destination="CCr-Xs-ZzD" kind="show" id="f3z-Jd-f92"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -416,13 +423,57 @@
             </objects>
             <point key="canvasLocation" x="2811.594202898551" y="924.77678571428567"/>
         </scene>
+        <!--Sliding Picker-->
+        <scene sceneID="Wcd-eA-lOW">
+            <objects>
+                <viewController id="CCr-Xs-ZzD" customClass="LeftEdgeSlidingPickerDemoViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ll-WR-ttP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-T8-y7e" customClass="LeftEdgeSlidingPickerView" customModule="TMShared" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="408" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="P2J-QT-Inj"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q47-Zc-lmP">
+                                <rect key="frame" x="191.5" y="528" width="31" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="38o-4l-KAB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q47-Zc-lmP" firstAttribute="centerX" secondItem="4ll-WR-ttP" secondAttribute="centerX" id="G76-sD-7mu"/>
+                            <constraint firstItem="CKg-qw-vzH" firstAttribute="trailing" secondItem="EJl-T8-y7e" secondAttribute="trailing" id="TWv-0s-Yan"/>
+                            <constraint firstItem="EJl-T8-y7e" firstAttribute="centerY" secondItem="4ll-WR-ttP" secondAttribute="centerY" id="llm-J0-Ua9"/>
+                            <constraint firstItem="EJl-T8-y7e" firstAttribute="leading" secondItem="CKg-qw-vzH" secondAttribute="leading" id="nvF-cN-tmz"/>
+                            <constraint firstItem="q47-Zc-lmP" firstAttribute="top" secondItem="EJl-T8-y7e" secondAttribute="bottom" constant="40" id="uZ3-hP-BWP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CKg-qw-vzH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sliding Picker" id="RgB-sd-Wqq"/>
+                    <connections>
+                        <outlet property="labelValue" destination="q47-Zc-lmP" id="9Xz-WW-4Cg"/>
+                        <outlet property="slidingPicker" destination="EJl-T8-y7e" id="bwZ-Nt-2PV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGa-yC-ani" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3721.739130434783" y="924.77678571428567"/>
+        </scene>
         <!--PopoverFloatPickerViewController-->
         <scene sceneID="vEY-Mf-WuV">
             <objects>
                 <viewControllerPlaceholder storyboardName="PopoverFloatPickerViewController" id="RGx-4v-ao9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ift-mw-dgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3476" y="1010"/>
+            <point key="canvasLocation" x="2812" y="1379"/>
         </scene>
         <!--DotSequenceView-->
         <scene sceneID="qYj-qD-wQ3">

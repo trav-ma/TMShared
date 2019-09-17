@@ -8,6 +8,16 @@
 
 import Foundation
 
+extension String {
+    
+    func toDate(format: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: self)
+    }
+    
+}
+
 extension Date {
     
     static let months = [

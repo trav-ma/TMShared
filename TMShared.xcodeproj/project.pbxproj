@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C06DA4D2331277D00386CEA /* LeftEdgeSlidingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C06DA4C2331277D00386CEA /* LeftEdgeSlidingPickerView.swift */; };
+		1C06DA4F23312C7100386CEA /* LeftEdgeSlidingPickerDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C06DA4E23312C7100386CEA /* LeftEdgeSlidingPickerDemoViewController.swift */; };
 		1C13C81A2314E0DE00BE52AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C8192314E0DE00BE52AB /* AppDelegate.swift */; };
 		1C13C81C2314E0DE00BE52AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C81B2314E0DE00BE52AB /* SceneDelegate.swift */; };
 		1C13C81E2314E0DE00BE52AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13C81D2314E0DE00BE52AB /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C06DA4C2331277D00386CEA /* LeftEdgeSlidingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftEdgeSlidingPickerView.swift; sourceTree = "<group>"; };
+		1C06DA4E23312C7100386CEA /* LeftEdgeSlidingPickerDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftEdgeSlidingPickerDemoViewController.swift; sourceTree = "<group>"; };
 		1C13C8162314E0DE00BE52AB /* TMShared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMShared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C13C8192314E0DE00BE52AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C13C81B2314E0DE00BE52AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				1C80C0F02314E6B400DF8D6C /* StreamReaderDemoViewController.swift */,
 				1C80C0F22314E6C400DF8D6C /* WaitButtonDemoViewController.swift */,
 				1CCA41772319CEE10049DC95 /* UpImageCarouselDemoViewController.swift */,
+				1C06DA4E23312C7100386CEA /* LeftEdgeSlidingPickerDemoViewController.swift */,
 			);
 			path = TMShared;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				1C5A8FF22314E1780002990B /* PopoverFloatPickerViewController.swift */,
 				1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */,
 				1C5A8FF32314E1780002990B /* WaitButton.swift */,
+				1C06DA4C2331277D00386CEA /* LeftEdgeSlidingPickerView.swift */,
 			);
 			path = SharedComponents;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				1C80C0E52314E61500DF8D6C /* ImagePanDemoViewController.swift in Sources */,
 				1C5A8FF82314E1790002990B /* SpiralGraphView.swift in Sources */,
 				1C5A900C2314E1790002990B /* WaitButton.swift in Sources */,
+				1C06DA4D2331277D00386CEA /* LeftEdgeSlidingPickerView.swift in Sources */,
 				1C5A8FFD2314E1790002990B /* ImagePanViewController.swift in Sources */,
 				1C5A90042314E1790002990B /* StoryboardHelper.swift in Sources */,
 				1C5A900F2314E1790002990B /* ModalNumberEntryViewController.swift in Sources */,
@@ -298,6 +305,7 @@
 				1C4955502319CE8400E3F281 /* UPCarouselFlowLayout.swift in Sources */,
 				1C5A90102314E1790002990B /* DotSequenceView.swift in Sources */,
 				1C5A8FFC2314E1790002990B /* CircleGraphView.swift in Sources */,
+				1C06DA4F23312C7100386CEA /* LeftEdgeSlidingPickerDemoViewController.swift in Sources */,
 				1C5A90062314E1790002990B /* NSManagedObject+CloudKit.swift in Sources */,
 				1C80C0EB2314E66F00DF8D6C /* PopoverDatePickerDemoViewController.swift in Sources */,
 				1C5A900B2314E1790002990B /* PopoverFloatPickerViewController.swift in Sources */,
