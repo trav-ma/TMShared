@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LeftEdgeSlidingPickerViewDelegate {
-    func leftEdgeSlidingPickerDidSelect(index: Int)
+    func leftEdgeSlidingPicker(_ slidingPicker: LeftEdgeSlidingPickerView, didSelectItemAt index: Int)
 }
 
 class LeftEdgeSlidingPickerView: UIView {
@@ -17,10 +17,16 @@ class LeftEdgeSlidingPickerView: UIView {
     private var stackView = UIStackView()
     private var constraintSlidingViewWidth: NSLayoutConstraint?
     private var valueButtons = [UIButton]()
-    var currentIndex: Int = 0
-    var delehgate: LeftEdgeSlidingPickerViewDelegate?
+    var currentIndex: Int = 0 {
+        didSet {
+            updateUI()
+        }
+    }
+    var delegate: LeftEdgeSlidingPickerViewDelegate?
     private let kSlidingViewOffScreenAmount: CGFloat = 40
     private let kLeftPaddingToFirstButton: CGFloat = 20
+    private var defaultValueFont = UIFont.systemFont(ofSize: 15)
+    private var selectedIndexFont = UIFont.boldSystemFont(ofSize: 15)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,8 +64,19 @@ class LeftEdgeSlidingPickerView: UIView {
     /// - Parameter sliderColor: color of the selection slider
     /// - Parameter values: can be either  UIImage anything convertable to String via "\(value)"
     /// - Parameter font: font for the values
-    /// - Parameter selectedValueColor: color of the value inside of the selection slider
-    func setup(sliderColor: UIColor, values: [Any], font: UIFont? = nil, selectedValueColor: UIColor? = nil) {
+    /// - Parameter selectedValuesColor: color of the value inside of the selection slider
+    /// - Parameter selectedIndexFont: font for the value that is actually selected
+    func setup(sliderColor: UIColor,
+               values: [Any],
+               font: UIFont? = nil,
+               selectedValuesColor: UIColor? = nil,
+               selectedIndexFont: UIFont? = nil) {
+        if let font = font {
+            self.defaultValueFont = font
+        }
+        if let selectedIndexFont = selectedIndexFont {
+            self.selectedIndexFont = selectedIndexFont
+        }
         slidingView.backgroundColor = sliderColor
         valueButtons = []
         for view in stackView.arrangedSubviews {
@@ -77,8 +94,8 @@ class LeftEdgeSlidingPickerView: UIView {
             if let font = font {
                 btn.titleLabel?.font = font
             }
-            if let selectedValueColor = selectedValueColor {
-                btn.setTitleColor(selectedValueColor, for: .selected)
+            if let selectedValuesColor = selectedValuesColor {
+                btn.setTitleColor(selectedValuesColor, for: .selected)
             }
             btn.tag = idx
             btn.addTarget(self, action:#selector(self.buttonClicked(_:)), for: .touchUpInside)
@@ -90,9 +107,14 @@ class LeftEdgeSlidingPickerView: UIView {
     func updateUI() {
         for btn in valueButtons {
             btn.isSelected = btn.tag <= currentIndex
+            if btn.tag == currentIndex {
+                btn.titleLabel?.font =  selectedIndexFont
+                constraintSlidingViewWidth?.constant = btn.frame.origin.x + kSlidingViewOffScreenAmount + btn.frame.width + kLeftPaddingToFirstButton
+            } else {
+                btn.titleLabel?.font =  defaultValueFont
+            }
+            
         }
-        let btn = valueButtons[currentIndex]
-        constraintSlidingViewWidth?.constant = btn.frame.origin.x + kSlidingViewOffScreenAmount + btn.frame.width + kLeftPaddingToFirstButton
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.layoutIfNeeded()
         }, completion: nil )
@@ -100,7 +122,6 @@ class LeftEdgeSlidingPickerView: UIView {
     
     @IBAction func buttonClicked(_ sender: UIButton) {
         currentIndex = sender.tag
-        delehgate?.leftEdgeSlidingPickerDidSelect(index: currentIndex)
-        updateUI()
+        delegate?.leftEdgeSlidingPicker(self, didSelectItemAt: currentIndex)
     }
 }
