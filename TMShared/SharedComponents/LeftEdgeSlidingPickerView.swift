@@ -27,6 +27,7 @@ class LeftEdgeSlidingPickerView: UIView {
     private let kLeftPaddingToFirstButton: CGFloat = 20
     private var defaultValueFont = UIFont.systemFont(ofSize: 15)
     private var selectedIndexFont = UIFont.boldSystemFont(ofSize: 15)
+    private var selectedValuesColor = UIColor.label
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,6 +78,9 @@ class LeftEdgeSlidingPickerView: UIView {
         if let selectedIndexFont = selectedIndexFont {
             self.selectedIndexFont = selectedIndexFont
         }
+        if let selectedValuesColor = selectedValuesColor {
+            self.selectedValuesColor = selectedValuesColor
+        }
         slidingView.backgroundColor = sliderColor
         valueButtons = []
         for view in stackView.arrangedSubviews {
@@ -94,9 +98,6 @@ class LeftEdgeSlidingPickerView: UIView {
             if let font = font {
                 btn.titleLabel?.font = font
             }
-            if let selectedValuesColor = selectedValuesColor {
-                btn.setTitleColor(selectedValuesColor, for: .selected)
-            }
             btn.tag = idx
             btn.addTarget(self, action:#selector(self.buttonClicked(_:)), for: .touchUpInside)
             valueButtons.append(btn)
@@ -106,14 +107,19 @@ class LeftEdgeSlidingPickerView: UIView {
     
     func updateUI() {
         for btn in valueButtons {
-            btn.isSelected = btn.tag <= currentIndex
+            if btn.tag <= currentIndex {
+                btn.setTitleColor(selectedValuesColor, for: .normal)
+                btn.tintColor = selectedValuesColor
+            } else {
+                btn.setTitleColor(.label, for: .normal)
+                btn.tintColor = .label
+            }
             if btn.tag == currentIndex {
                 btn.titleLabel?.font =  selectedIndexFont
                 constraintSlidingViewWidth?.constant = btn.frame.origin.x + kSlidingViewOffScreenAmount + btn.frame.width + kLeftPaddingToFirstButton
             } else {
                 btn.titleLabel?.font =  defaultValueFont
             }
-            
         }
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.layoutIfNeeded()
