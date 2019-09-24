@@ -44,6 +44,25 @@ extension Date {
         return 0
     }
     
+    ///dateStyle:medium Nov 23, 1937
+    ///timeStyle:medium 3:30:32 PM
+    ///dateStyle:short 11/23/18
+    ///timeStyle:short 3:30 PM
+    ///dateStyle:long November 23, 1937
+    ///timeStyle:long 3:30:32 PM PST
+    func string(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = dateStyle
+        dateFormatter.timeStyle = timeStyle
+        return dateFormatter.string(from: self)
+    }
+    
+    func string(_ format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate(format)
+        return dateFormatter.string(from: self)
+    }
+    
     func relativeDate() -> String {
         let formatter = RelativeDateTimeFormatter()
         return formatter.localizedString(for: self, relativeTo: Date())
