@@ -12,11 +12,25 @@ import CloudKit
 
 extension NSManagedObject {
     //in core data only use doubles, strings, dates, bools and int64
+    
     //replicate the fields and entity names from CloudKit exactly
+    
     //must have a systemFields Binary data field (CoreData Only)
+    
     //must have a needsSync bool (CoreData Only)
     
-    func cloudKitRecord() -> CKRecord {
+    //recommended isOfflineDeleted field in both CoreData + CloudKit
+    
+    //recommended uid String field in both CoreData + CloudKit for guid id + relations
+    
+    //NOTE: if you set something to nil, it will not sync down from CloudKit, this is because when we alter DB (add fields) and add default values, those will be set to nil on initial sync
+    
+    //CloudKit DB tables should have "modifiedByDeviceIdentifier" String (Queryable). CoreData shouldn't have this field
+    //This field is so that when you push changes to CloudKit, you can skip syncing those same changes down later by requesting records where
+    //modifiedByDeviceIdentifier doesn't match your id
+    //Cloudkit DB should have "modifiedAt" set to Queryable
+    
+    func cloudKitRecord(deviceId: String? = nil) -> CKRecord {
         var record: CKRecord!
         if let systemFields = self.value(forKey: "systemFields") as? NSData {
             record = dataToRecord(data: systemFields)
@@ -37,10 +51,13 @@ extension NSManagedObject {
             case .booleanAttributeType:
                 record[field] = self.value(forKey: field) as? Bool
             case .dateAttributeType:
-                record[field] = self.value(forKey: field) as? NSDate
+                record[field] = self.value(forKey: field) as? Date
             default:
                 break
             }
+        }
+        if deviceId != nil {
+            record["modifiedByDeviceIdentifier"] = deviceId!
         }
         return record
     }
@@ -52,6 +69,7 @@ extension NSManagedObject {
         context.performAndWait {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: record.recordType)
             request.predicate = NSPredicate(format: "uid = %@", ckuid)
+            request.fetchLimit = 1
             var object = try? context.fetch(request).first as? NSManagedObject
             if object == nil {
                 let entity = NSEntityDescription.entity(forEntityName: record.recordType, in: context)!
@@ -67,17 +85,30 @@ extension NSManagedObject {
                         object.setValue(false, forKey: field)
                         continue
                     }
+                    if field == "modifiedByDeviceIdentifier" {
+                        continue
+                    }
                     switch attribute.attributeType {
                     case .integer64AttributeType:
-                        object.setValue(record[field] as? Int64, forKey: field)
+                        if let value = record[field] as? Int64 {
+                            object.setValue(value, forKey: field)
+                        }
                     case .doubleAttributeType:
-                        object.setValue(record[field] as? Double, forKey: field)
+                        if let value = record[field] as? Double {
+                            object.setValue(value, forKey: field)
+                        }
                     case .stringAttributeType:
-                        object.setValue(record[field] as? String, forKey: field)
+                        if let value = record[field] as? String {
+                            object.setValue(value, forKey: field)
+                        }
                     case .booleanAttributeType:
-                        object.setValue(record[field] as? Bool ?? false, forKey: field)
+                        if let value = record[field] as? Bool {
+                            object.setValue(value, forKey: field)
+                        }
                     case .dateAttributeType:
-                        object.setValue(record[field] as? NSDate, forKey: field)
+                        if let value = record[field] as? Date {
+                            object.setValue(value, forKey: field)
+                        }
                     default:
                         break
                     }

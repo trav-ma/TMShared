@@ -60,7 +60,7 @@ extension NSManagedObjectContext {
     /// - Throws: An error if anything went wrong executing the batch deletion.
 //    dbContext.performAndWait {
 //        let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
-//        fetchRequest.predicate = NSPredicate(format: "date < %@", NSDate())  //to delete all, use no predictae
+//        fetchRequest.predicate = NSPredicate(format: "date < %@", Date() as CVarArg)  //to delete all, use no predicate
 //        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 //        try? dbContext.executeAndMergeChanges(using: batchDeleteRequest)
 //    }
