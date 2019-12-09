@@ -26,6 +26,14 @@ var dbContext: NSManagedObjectContext {
     return databaseContainer.viewContext
 }
 
+func saveDatabase() {
+    do {
+        try dbContext.save()
+    } catch {
+        fatalError("Database save error: \(error)")
+    }
+}
+
 //example upsert
 //dbContext.performAndWait {
 //    let request: NSFetchRequest<Day> = Day.fetchRequest()
@@ -39,7 +47,7 @@ var dbContext: NSManagedObjectContext {
 //    }
 //    dayRecord.dayId = dayId
 //    dayRecord.isDayOff = false
-//    try? dbContext.save()
+//    saveDatabase()
 //}
 
 //example fetch

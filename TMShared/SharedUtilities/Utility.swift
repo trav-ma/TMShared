@@ -17,6 +17,14 @@ func formatCurrency(_ number: NSNumber?) -> String {
     return formatter.string(from: num)!
 }
 
+func singularPluralText(count: Int, singularText: String, pluralText: String) -> String {
+    if count == 1 {
+        return "\(count) \(singularText)"
+    } else {
+        return "\(count) \(pluralText)"
+    }
+}
+
 func formatPhone(_ phone: String?) -> String {
     guard let phone = phone else {
         return ""

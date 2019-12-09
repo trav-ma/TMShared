@@ -185,7 +185,7 @@ extension Date {
         return Date(timeIntervalSinceReferenceDate: time)
     }
     
-    func round(toNearestMinutes minutes: Int) -> Date {
+    func rounded(toNearestMinutes minutes: Int) -> Date {
         let calendar = Calendar.current
         let nextDiff = minutes - calendar.component(.minute, from: self) % minutes
         if nextDiff == minutes {
