@@ -22,7 +22,7 @@ class PopoverDatePickerViewController: UIViewController {
         super.viewDidLoad()
         self.preferredContentSize = CGSize(width: 280, height: 200)
         if minuteInterval > 0 {
-            datePicker.date = date.round(toNearestMinutes: minuteInterval)
+            datePicker.date = date.rounded(toNearestMinutes: minuteInterval)
             datePicker.datePickerMode = .dateAndTime
             datePicker.minuteInterval = minuteInterval
         } else {

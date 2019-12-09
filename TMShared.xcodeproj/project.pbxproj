@@ -16,6 +16,7 @@
 		1C13C8232314E0DF00BE52AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8222314E0DF00BE52AB /* Assets.xcassets */; };
 		1C13C8262314E0DF00BE52AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C13C8242314E0DF00BE52AB /* LaunchScreen.storyboard */; };
 		1C4955502319CE8400E3F281 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49554F2319CE8400E3F281 /* UPCarouselFlowLayout.swift */; };
+		1C58F9E8239ED716004F63E1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58F9E7239ED716004F63E1 /* UIColor+Extensions.swift */; };
 		1C5A8FF82314E1790002990B /* SpiralGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */; };
 		1C5A8FF92314E1790002990B /* CloudKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */; };
 		1C5A8FFB2314E1790002990B /* ModalTextEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */; };
@@ -65,6 +66,7 @@
 		1C13C8252314E0DF00BE52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C13C8272314E0DF00BE52AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C49554F2319CE8400E3F281 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		1C58F9E7239ED716004F63E1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		1C5A8FDF2314E1780002990B /* SpiralGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiralGraphView.swift; sourceTree = "<group>"; };
 		1C5A8FE02314E1780002990B /* CloudKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelpers.swift; sourceTree = "<group>"; };
 		1C5A8FE22314E1780002990B /* ModalTextEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextEntryViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				1C5A8FF02314E1780002990B /* Date+Extensions.swift */,
 				1C5A8FE52314E1780002990B /* StreamReader.swift */,
 				1C5A8FE92314E1780002990B /* Utility.swift */,
+				1C58F9E7239ED716004F63E1 /* UIColor+Extensions.swift */,
 			);
 			path = SharedUtilities;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				1C13C81A2314E0DE00BE52AB /* AppDelegate.swift in Sources */,
 				1C13C81C2314E0DE00BE52AB /* SceneDelegate.swift in Sources */,
 				1C5A90002314E1790002990B /* PopoverDatePickerViewController.swift in Sources */,
+				1C58F9E8239ED716004F63E1 /* UIColor+Extensions.swift in Sources */,
 				1C80C0E72314E63200DF8D6C /* ModalNumberEntryDemoViewController.swift in Sources */,
 				1C4955502319CE8400E3F281 /* UPCarouselFlowLayout.swift in Sources */,
 				1C5A90102314E1790002990B /* DotSequenceView.swift in Sources */,
