@@ -41,6 +41,7 @@ extension StoryboardInstantiable where Self: UIViewController {
 extension UIViewController {
     
     @IBAction func btnCloseTap(_ sender: Any) {
+        self.view.endEditing(true)
         if let nc = self.navigationController {
             if nc.viewControllers.first == self {
                 self.dismiss(animated: true, completion: nil)

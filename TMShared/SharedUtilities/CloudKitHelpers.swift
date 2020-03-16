@@ -29,14 +29,26 @@ func referencesToRecordNamesArray(references: CKRecordValue?) -> [String] {
     return recordNames
 }
 
-func recordToData(record: CKRecord) -> NSData {
+func recordToNSData(record: CKRecord) -> NSData {
     let coder = NSKeyedArchiver(requiringSecureCoding: true)
     record.encodeSystemFields(with: coder)
     return coder.encodedData as NSData
 }
 
+func recordToData(record: CKRecord) -> Data {
+    let coder = NSKeyedArchiver(requiringSecureCoding: true)
+    record.encodeSystemFields(with: coder)
+    return coder.encodedData
+}
+
 func dataToRecord(data: NSData) -> CKRecord? {
     let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: data as Data)
+    unarchiver?.requiresSecureCoding = true
+    return unarchiver == nil ? nil : CKRecord(coder: unarchiver!)
+}
+
+func dataToRecord(data: Data) -> CKRecord? {
+    let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: data)
     unarchiver?.requiresSecureCoding = true
     return unarchiver == nil ? nil : CKRecord(coder: unarchiver!)
 }
