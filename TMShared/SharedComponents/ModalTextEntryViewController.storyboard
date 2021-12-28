@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Modal Text Entry View Controller-->
         <scene sceneID="RDt-LR-HTi">
             <objects>
-                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="CarePaper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ro-bk-zy3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,12 +24,9 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="px6-rt-pgq">
-                                            <rect key="frame" x="48" y="74" width="279" height="300"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="300" id="f67-qN-X1e"/>
-                                            </constraints>
-                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <rect key="frame" x="48" y="74" width="279" height="338"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="textColor" systemColor="labelColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -40,7 +39,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
-                                            <rect key="frame" x="48" y="382" width="80" height="40"/>
+                                            <rect key="frame" x="48" y="420" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="4YO-ca-A77"/>
                                                 <constraint firstAttribute="height" constant="40" id="gmr-df-Lk4"/>
@@ -51,7 +50,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
-                                            <rect key="frame" x="247" y="382" width="80" height="40"/>
+                                            <rect key="frame" x="247" y="420" width="80" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="69h-1M-I7D"/>
                                                 <constraint firstAttribute="height" constant="40" id="P4C-2U-NIE"/>
@@ -71,6 +70,7 @@
                                         <constraint firstItem="WI7-wf-5lp" firstAttribute="leading" secondItem="bmY-dW-IXX" secondAttribute="leading" constant="8" id="RVY-WH-mLW"/>
                                         <constraint firstItem="U5x-YV-6fm" firstAttribute="top" secondItem="px6-rt-pgq" secondAttribute="bottom" constant="8" id="S4t-DO-m5R"/>
                                         <constraint firstItem="WI7-wf-5lp" firstAttribute="top" secondItem="bmY-dW-IXX" secondAttribute="top" constant="44" id="S7z-SO-xTK"/>
+                                        <constraint firstAttribute="bottom" secondItem="px6-rt-pgq" secondAttribute="bottom" constant="400" id="bTB-P3-Bu5"/>
                                         <constraint firstItem="px6-rt-pgq" firstAttribute="leading" secondItem="bmY-dW-IXX" secondAttribute="leading" constant="48" id="c6W-gN-k4i"/>
                                         <constraint firstAttribute="trailing" secondItem="WI7-wf-5lp" secondAttribute="trailing" constant="8" id="wBJ-Cz-Z5O"/>
                                     </constraints>
@@ -78,6 +78,7 @@
                                 <blurEffect style="systemMaterial"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pnr-Ed-xN5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fHB-wn-4dP" firstAttribute="leading" secondItem="Pnr-Ed-xN5" secondAttribute="leading" id="FNe-2s-9xl"/>
@@ -85,7 +86,6 @@
                             <constraint firstAttribute="bottom" secondItem="fHB-wn-4dP" secondAttribute="bottom" id="R3k-5j-dnd"/>
                             <constraint firstItem="fHB-wn-4dP" firstAttribute="trailing" secondItem="Pnr-Ed-xN5" secondAttribute="trailing" id="g9R-OK-gr9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Pnr-Ed-xN5"/>
                     </view>
                     <connections>
                         <outlet property="btnDismiss" destination="U5x-YV-6fm" id="Kfp-Cc-1ec"/>
@@ -100,7 +100,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

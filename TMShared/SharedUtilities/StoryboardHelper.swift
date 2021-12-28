@@ -56,7 +56,7 @@ extension UIViewController {
 }
 
 //To use this protocol the cell should has the identifier and nib name must have the same name like cell ID 
-protocol SingleReuseIdentifier: class {
+protocol SingleReuseIdentifier: AnyObject {
 	static var identifier: String {get}
 	static var nibName: String {get}
 	static var nib: UINib {get}

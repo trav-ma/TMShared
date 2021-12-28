@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHu-yt-Sfp">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHu-yt-Sfp">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,34 +11,106 @@
         <!--Popover Date Picker View Controller-->
         <scene sceneID="9vt-ry-28G">
             <objects>
-                <viewController id="IHu-yt-Sfp" customClass="PopoverDatePickerViewController" customModule="TMShared" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IHu-yt-Sfp" customClass="PopoverDatePickerViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8G9-VF-aUj">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="WyD-54-0K9">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
-                            </datePicker>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyT-M3-hN4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="905-D1-MLN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-Hm-787">
+                                            <rect key="frame" x="132.33333333333334" y="46" width="110.33333333333334" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="qDS-iB-jDR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgu-88-hxP">
+                                            <rect key="frame" x="48" y="740" width="80" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="6JG-Cy-sdN"/>
+                                                <constraint firstAttribute="width" constant="80" id="CzZ-fr-PvD"/>
+                                            </constraints>
+                                            <state key="normal" image="xmark" catalog="system"/>
+                                            <connections>
+                                                <action selector="btnDismissTap:" destination="IHu-yt-Sfp" eventType="touchUpInside" id="gxB-ce-YT8"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-t5-noQ">
+                                            <rect key="frame" x="247" y="740" width="80" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="OnV-pN-oHz"/>
+                                                <constraint firstAttribute="height" constant="40" id="jbi-AB-e1Z"/>
+                                            </constraints>
+                                            <state key="normal" image="checkmark" catalog="system"/>
+                                            <connections>
+                                                <action selector="btnSaveTap:" destination="IHu-yt-Sfp" eventType="touchUpInside" id="SZb-Gi-7fR"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/23/21" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="23" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-5t-Tt2">
+                                            <rect key="frame" x="20" y="76" width="335" height="265"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="SxG-r4-yMR">
+                                            <rect key="frame" x="20" y="349" width="335" height="383"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="SxG-r4-yMR" secondAttribute="height" multiplier="14:16" id="Jup-PB-PzG"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="datePickerDidChange:" destination="IHu-yt-Sfp" eventType="valueChanged" id="gyK-xc-hdc"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hgu-88-hxP" firstAttribute="leading" secondItem="905-D1-MLN" secondAttribute="leading" constant="48" id="5tq-n3-EmS"/>
+                                        <constraint firstAttribute="trailing" secondItem="2yB-5t-Tt2" secondAttribute="trailing" constant="20" symbolic="YES" id="9AZ-Bb-4Mf"/>
+                                        <constraint firstItem="2yB-5t-Tt2" firstAttribute="leading" secondItem="905-D1-MLN" secondAttribute="leading" constant="20" symbolic="YES" id="Hei-K2-aX6"/>
+                                        <constraint firstItem="WHR-Hm-787" firstAttribute="centerX" secondItem="905-D1-MLN" secondAttribute="centerX" id="KIG-n0-0uZ"/>
+                                        <constraint firstItem="Hgu-88-hxP" firstAttribute="top" secondItem="SxG-r4-yMR" secondAttribute="bottom" constant="8" symbolic="YES" id="MgU-DU-Yle"/>
+                                        <constraint firstAttribute="trailing" secondItem="SxG-r4-yMR" secondAttribute="trailing" constant="20" id="Qfp-8T-HVC"/>
+                                        <constraint firstItem="SxG-r4-yMR" firstAttribute="leading" secondItem="905-D1-MLN" secondAttribute="leading" constant="20" id="aga-YU-9cD"/>
+                                        <constraint firstItem="2yB-5t-Tt2" firstAttribute="top" secondItem="WHR-Hm-787" secondAttribute="bottom" constant="8" symbolic="YES" id="fch-tn-q7X"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hgu-88-hxP" secondAttribute="bottom" constant="32" id="jch-cA-Zzl"/>
+                                        <constraint firstItem="WHR-Hm-787" firstAttribute="top" secondItem="905-D1-MLN" secondAttribute="top" constant="46" id="oRi-sZ-e8v"/>
+                                        <constraint firstAttribute="bottom" secondItem="7QA-t5-noQ" secondAttribute="bottom" constant="32" id="p0V-LD-psf"/>
+                                        <constraint firstItem="SxG-r4-yMR" firstAttribute="top" secondItem="2yB-5t-Tt2" secondAttribute="bottom" constant="8" symbolic="YES" id="tXB-gy-Fi9"/>
+                                        <constraint firstAttribute="trailing" secondItem="7QA-t5-noQ" secondAttribute="trailing" constant="48" id="w7J-uE-6TR"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="systemMaterial"/>
+                            </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="WyD-54-0K9" firstAttribute="leading" secondItem="hN0-Gu-dOt" secondAttribute="leading" id="6ly-cO-Vc7"/>
-                            <constraint firstItem="WyD-54-0K9" firstAttribute="top" secondItem="hN0-Gu-dOt" secondAttribute="top" id="Trw-QZ-XxR"/>
-                            <constraint firstItem="WyD-54-0K9" firstAttribute="bottom" secondItem="hN0-Gu-dOt" secondAttribute="bottom" id="YSv-9c-4hT"/>
-                            <constraint firstItem="WyD-54-0K9" firstAttribute="trailing" secondItem="hN0-Gu-dOt" secondAttribute="trailing" id="k2r-uB-5ud"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hN0-Gu-dOt"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vyT-M3-hN4" secondAttribute="bottom" id="0ID-yT-7nc"/>
+                            <constraint firstItem="vyT-M3-hN4" firstAttribute="trailing" secondItem="hN0-Gu-dOt" secondAttribute="trailing" id="7W8-ac-VLW"/>
+                            <constraint firstItem="vyT-M3-hN4" firstAttribute="leading" secondItem="hN0-Gu-dOt" secondAttribute="leading" id="KvA-zM-r61"/>
+                            <constraint firstItem="vyT-M3-hN4" firstAttribute="top" secondItem="8G9-VF-aUj" secondAttribute="top" id="vFi-E6-mBQ"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="280" height="200"/>
                     <connections>
-                        <outlet property="datePicker" destination="WyD-54-0K9" id="Wmd-gV-mrW"/>
+                        <outlet property="btnDismiss" destination="Hgu-88-hxP" id="qWb-HG-d4i"/>
+                        <outlet property="btnSave" destination="7QA-t5-noQ" id="5yX-Bg-Rj0"/>
+                        <outlet property="datePicker" destination="SxG-r4-yMR" id="ggN-va-hRL"/>
+                        <outlet property="labelDate" destination="2yB-5t-Tt2" id="nBG-uH-aCy"/>
+                        <outlet property="labelTitle" destination="WHR-Hm-787" id="d9p-cT-Ari"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7R-dQ-RW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="-1164.0179910044978"/>
+            <point key="canvasLocation" x="1367.2" y="-1165.2709359605913"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

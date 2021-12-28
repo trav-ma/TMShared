@@ -104,6 +104,10 @@ func generatePasscode(_ length : Int) -> String {
     return randomString as String
 }
 
+func isDebuggerAttached() -> Bool {
+    return getppid() != 1
+}
+
 func stringToDate(_ string: String, format: String) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
