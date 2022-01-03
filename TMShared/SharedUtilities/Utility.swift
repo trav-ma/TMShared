@@ -71,11 +71,7 @@ func addCommas(_ number: NSNumber?) -> String {
 
 struct Platform {
     static let isSimulator: Bool = {
-        #if arch(i386) || arch(x86_64)
-            return true
-        #else
-            return false
-        #endif
+        return getppid() != 1
     }()
 }
 
@@ -102,10 +98,6 @@ func generatePasscode(_ length : Int) -> String {
         randomString.appendFormat("%C", letters.character(at: Int(rand)))
     }
     return randomString as String
-}
-
-func isDebuggerAttached() -> Bool {
-    return getppid() != 1
 }
 
 func stringToDate(_ string: String, format: String) -> Date? {
