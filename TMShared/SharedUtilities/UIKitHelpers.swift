@@ -98,3 +98,35 @@ func animateShakes(view: UIView, shakes: Int, direction: Int) {
             animateShakes(view: view, shakes: s, direction: d)
     })
 }
+
+/// Class ensures that swiping down on a modal while keyboard is present will dismiss the keyboard, not the whole modal (in case of unsaved changes / bottom navigation)
+class KeyboardModalNonDismissableViewController: UIViewController, UIAdaptivePresentationControllerDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presentationController?.delegate = self
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didHide),
+                                               name: UIResponder.keyboardDidHideNotification,
+                                               object: nil)
+    }
+    
+    @objc func willShow() {
+        isModalInPresentation = true
+    }
+
+    @objc func didHide() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isModalInPresentation = false
+        }
+    }
+    
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        self.view.endEditing(true)
+    }
+    
+}

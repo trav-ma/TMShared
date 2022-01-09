@@ -13,21 +13,21 @@ import CloudKit
 extension NSManagedObject {
     //in core data only use doubles, strings, dates, bools and int64
     
-    //replicate the fields and entity names from CloudKit exactly
+    //replicate the fields and entity names from CloudKit EXACTLY
     
     //must have a systemFields Binary data field (CoreData Only)
     
-    //must have a needsSync bool (CoreData Only)
+    //must have a needsSync bool (CoreData Only) - Default value = false
     
-    //recommended isOfflineDeleted field in both CoreData + CloudKit
+    //recommended isOfflineDeleted field in both CoreData (Default value = false) + CloudKit
     
     //recommended uid String field in both CoreData + CloudKit for guid id + relations
     
-    //NOTE: if you set something to nil, it will not sync down from CloudKit, this is because when we alter DB (add fields) and add default values, those will be set to nil on initial sync
+    //NOTE: if you set something to nil, it will not sync down from CloudKit, this is because when we alter DB (add fields) and add default values (in core data, since CloudKit doesn't support default values), those will be set to nil on initial sync... if CloudKit supports default values we can change this to sync down nils
     
     //CloudKit DB tables should have "modifiedByDeviceIdentifier" String (Queryable). CoreData shouldn't have this field
-    //This field is so that when you push changes to CloudKit, you can skip syncing those same changes down later by requesting records where
-    //modifiedByDeviceIdentifier doesn't match your id
+    //This field is so that when you push changes to CloudKit, you can skip syncing those same changes down later by requesting records where modifiedByDeviceIdentifier doesn't match your id
+    
     //Cloudkit DB should have "modifiedAt" set to Queryable
     
     func cloudKitRecord(deviceId: String? = nil) -> CKRecord {
@@ -90,7 +90,7 @@ extension NSManagedObject {
                     }
                     switch attribute.attributeType {
                     case .integer64AttributeType:
-                        if let value = record[field] as? Int64 {
+                        if let value = record[field] as? Int64 { //if it's not nil, we'll sync it down, see old version to sync down nils
                             object.setValue(value, forKey: field)
                         }
                     case .doubleAttributeType:
