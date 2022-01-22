@@ -29,6 +29,12 @@ func gradientLayer(frame: CGRect, topLeftColor: UIColor, bottomRightColor: UICol
     return gradientLayer
 }
 
+let highPriotityConstraint = UILayoutPriority(1000)
+let lowPriotityConstraint = UILayoutPriority(998)
+func highLayoutPriorityForiPhoneMini() -> UILayoutPriority {
+    return isiPhoneMini() ? highPriotityConstraint : lowPriotityConstraint
+}
+
 func isiPhoneMini() -> Bool {
     return UIScreen.main.bounds.height < 700 //iPhone mini 693
 }
