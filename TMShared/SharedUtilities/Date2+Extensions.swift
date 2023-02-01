@@ -535,6 +535,7 @@ public extension Date {
         var date = self
         date.hour = hour
         date.minute = minute
+        date.second = 0
         return date
     }
 
@@ -767,7 +768,7 @@ public extension Date {
     ///
     /// - Parameter format: Date format (default is "dd/MM/yyyy").
     /// - Returns: date string.
-    func string(withFormat format: String = "dd/MM/yyyy HH:mm", timeZoneId: String?) -> String {
+    func string(withFormat format: String = "dd/MM/yyyy HH:mm", timeZoneId: String? = nil) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         if let timeZoneId = timeZoneId {

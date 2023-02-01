@@ -69,10 +69,8 @@ func addCommas(_ number: NSNumber?) -> String {
     }
 }
 
-struct Platform {
-    static let isSimulator: Bool = {
-        return getppid() != 1
-    }()
+func isXcodeLaunched() -> Bool {
+    return getppid() != 1
 }
 
 func jsonDataToObject(_ data: Data?) -> Any? {
