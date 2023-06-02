@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mtn-RQ-vee">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Modal Text Entry View Controller-->
         <scene sceneID="RDt-LR-HTi">
             <objects>
-                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="GiftHound" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mtn-RQ-vee" customClass="ModalTextEntryViewController" customModule="Ride_Paper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ro-bk-zy3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5x-YV-6fm">
                                             <rect key="frame" x="48" y="400" width="80" height="40"/>
+                                            <accessibility key="accessibilityConfiguration" label="Cancel"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="4YO-ca-A77"/>
                                                 <constraint firstAttribute="height" constant="40" id="gmr-df-Lk4"/>
@@ -51,6 +52,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-Jr-OJs">
                                             <rect key="frame" x="247" y="400" width="80" height="40"/>
+                                            <accessibility key="accessibilityConfiguration" label="Save"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="69h-1M-I7D"/>
                                                 <constraint firstAttribute="height" constant="40" id="P4C-2U-NIE"/>

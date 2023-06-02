@@ -38,7 +38,7 @@ extension StoryboardInstantiable where Self: UIViewController {
     
 }
 
-extension UIViewController {
+extension UIViewController: UIGestureRecognizerDelegate {
     
     @IBAction func btnCloseTap(_ sender: Any) {
         self.view.endEditing(true)
@@ -51,6 +51,23 @@ extension UIViewController {
         } else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func enableSwipeToPop() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    }
+    
+    func disableSwipeToPop() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+    
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == self.navigationController?.interactivePopGestureRecognizer {
+            return false
+        }
+        return true
     }
     
 }

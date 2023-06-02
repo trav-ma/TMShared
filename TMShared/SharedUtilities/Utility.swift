@@ -69,6 +69,7 @@ func addCommas(_ number: NSNumber?) -> String {
     }
 }
 
+//if in simulator
 func isXcodeLaunched() -> Bool {
     return getppid() != 1
 }

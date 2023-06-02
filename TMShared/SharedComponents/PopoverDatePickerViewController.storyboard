@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHu-yt-Sfp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHu-yt-Sfp">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,6 +32,7 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgu-88-hxP">
                                             <rect key="frame" x="48" y="740" width="80" height="40"/>
+                                            <accessibility key="accessibilityConfiguration" label="Cancel"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="6JG-Cy-sdN"/>
                                                 <constraint firstAttribute="width" constant="80" id="CzZ-fr-PvD"/>
@@ -43,6 +44,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-t5-noQ">
                                             <rect key="frame" x="247" y="740" width="80" height="40"/>
+                                            <accessibility key="accessibilityConfiguration" label="Save"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="OnV-pN-oHz"/>
                                                 <constraint firstAttribute="height" constant="40" id="jbi-AB-e1Z"/>
