@@ -555,6 +555,19 @@ public extension Date {
             self = date
         }
     }
+    
+    func nearestThirtyMinutesBefore() -> Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self)
+        let minutes = components.minute ?? 0
+        let roundedMinutes = (minutes / 30) * 30 // Round down to nearest 30
+        let adjustedComponents = DateComponents(year: components.year,
+                                                 month: components.month,
+                                                 day: components.day,
+                                                 hour: components.hour,
+                                                 minute: roundedMinutes)
+        return calendar.date(from: adjustedComponents) ?? self
+    }
 
     // swiftlint:disable cyclomatic_complexity function_body_length
     /// SwifterSwift: Date by changing value of calendar component.
